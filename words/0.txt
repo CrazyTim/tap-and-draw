@@ -17,6 +17,7 @@ sun
 house
 swing
 ice cream cone
+mermaid
 mouse
 dog
 girl
@@ -128,7 +129,6 @@ book
 rain
 sock
 beard
-skunk
 alien
 robot
 scarf
@@ -281,7 +281,6 @@ fork
 clock
 hair
 finger
-lemon
 crocodile
 king
 girl

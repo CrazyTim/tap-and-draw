@@ -8,6 +8,7 @@ fur
 outside
 wall
 glass
+tide
 gold
 pajamas
 salt
@@ -19,6 +20,7 @@ double storey building
 chalk
 stew
 download
+flavour
 shout
 sibling
 logo
@@ -119,7 +121,6 @@ Drop
 Saliva 
 Marching 
 Funeral 
-One-way street 
 entrée 
 Heated swimming pool 
 City 
@@ -152,7 +153,6 @@ Weather forecast
 cold
 burn
 push
-anvil
 stain
 armour
 sprout
@@ -180,6 +180,7 @@ wealthy
 bank
 movie
 roll
+heavy
 pull
 magazine
 Back seat
@@ -188,16 +189,19 @@ Burrito
 Captain
 Chandelier
 Cruise ship
+mascot
+customer
+mayor
+receipt
 Facebook
 Flat
 Frame
 Full moon
 Game
 Hotel
-Mom
-Mr Potato Head
 Paper plate
 Photo
+war
 Rock band
 Skip
 Solar eclipse
@@ -217,6 +221,7 @@ eureka
 publisher
 practice
 debt
+imagination
 tutor
 promise
 reimbursement
@@ -224,6 +229,7 @@ descendant
 rhythm
 knowledge
 gondola
+girlfriend / boyfriend
 ray
 kilogram
 armada
@@ -256,6 +262,7 @@ brunette
 lyrics
 brainstorm
 wish
+far
 bed and breakfast
 Atlantis
 time zone
@@ -284,6 +291,7 @@ observatory
 alergic reaction
 history
 food court
+flask
 expired
 altitude
 hobby
@@ -326,10 +334,13 @@ swag
 rainwater
 stun
 first mate
+shallow
+stain
 stowaway
+hijack
 telepathy
 cover
-offstage
+off-stage
 cartoonist
 handful
 good-bye
@@ -351,6 +362,7 @@ latitude
 diagonal
 mime
 thrift store
+revolver
 fade
 wobble
 brand

@@ -53,7 +53,6 @@ rubbish bin
 forest
 brick
 family
-hug
 smoke
 storm
 lawn mower
@@ -113,6 +112,7 @@ fan
 jump
 santa claus
 christmas tree
+christmas pudding
 quiet
 petrol
 wig
@@ -144,6 +144,7 @@ Pram
 Lamp 
 Toilet paper 
 Toothpick 
+pick axe
 Stove 
 Oven 
 Kitchen sink 
@@ -155,7 +156,6 @@ Escalator
 Elevator 
 Hike 
 Lizard 
-Telescope 
 Radiation 
 Drill 
 Boxing glove 
@@ -184,7 +184,6 @@ Music
 Calculator 
 Burger 
 Celery 
-Deodorant 
 Credit card 
 Car park 
 Sink 
@@ -225,11 +224,11 @@ Sun glasses
 Jellyfish 
 Worm 
 Row boat 
-Telescope 
 Saturn 
 Mars 
 Bookmark 
 Castle 
+street light
 Chainsaw 
 Quicksand 
 Cave 
@@ -237,7 +236,8 @@ Table tennis
 Traffic 
 Needle 
 Coffee table 
-Satellite dish 
+Satellite dish
+Satellite
 Palm tree 
 Seat belt 
 Oar 
@@ -318,6 +318,7 @@ muscles
 pancake
 snowflake
 motorbike
+flat battery
 tennis racket
 mountain bike
 iceberg
@@ -332,10 +333,12 @@ tornado
 bee hive
 space
 propeller
+iced tea
 pipe
 beaker
 fireplace
 teabag
+snake pit
 shoot
 spray
 look
@@ -376,12 +379,13 @@ bag
 axe
 thorn
 captain
+asthma puffer (inhaler)
 torch
 book towel
 Swimming Pool
 Fishing Rod
 Traffic Lights
-Chain saw
+chain
 Church
 Circus tent
 Computer
@@ -394,10 +398,11 @@ Eiffel Tower
 Ferris wheel
 Fireworks
 Flag
-Highchair
+High-chair
 Hockey
 Igloo
 Junk mail
+thermometer
 Kiss
 Kitten
 Kiwi
@@ -407,10 +412,8 @@ Lipstick
 Lobster
 Lollipop
 Magnet
-Mask
 Mechanic
 Megaphone
-Mermaid
 Music
 North pole
 Nurse
@@ -420,6 +423,7 @@ Pigtails
 Pirate
 Playground
 Pumpkin pie
+pumpkin soup
 Raindrop
 Robot
 Scrambled eggs
@@ -434,7 +438,6 @@ Stork
 Sunburn
 Tadpole
 Teepee
-Telescope
 Thread
 Train
 Tricycle
@@ -444,7 +447,6 @@ WIFI
 Zombie
 collar
 jumper
-pig
 tag
 toothpaste
 actor
@@ -558,7 +560,6 @@ dripping
 rib
 cherub
 ticket
-drawback
 softball
 crate
 midnight
@@ -567,6 +568,7 @@ trip
 ratchet
 bald
 laundry detergent
+hand bag
 freshman
 hand soap
 ginger
@@ -609,6 +611,7 @@ headache
 attack
 injury
 hipster
+binoculars
 cabin
 aunt
 stationery
@@ -646,7 +649,6 @@ fiance
 yard
 stow
 ruby
-swarm
 irrigation
 florist
 apathetic
@@ -656,7 +658,7 @@ company
 bonnet
 grandpa
 jungle
-pharaoh
+Pharaoh
 sneeze
 airport security
 hang glider
@@ -665,9 +667,8 @@ degree
 neighborhood
 jeans
 clown
-s'mores
 frost
-flavor
+cape
 vitamin
 cloak
 cheerleader
@@ -676,6 +677,7 @@ wheelie
 bedbug
 level
 disc jockey
+keyboard
 pocket
 carnival
 print
@@ -792,6 +794,7 @@ right
 drain
 hovercraft
 baseboards
+base ball
 plastic
 putty
 dawn
@@ -875,7 +878,6 @@ lake
 bushes
 museum
 rainstorm
-farm
 catfish
 printer
 fungus
@@ -990,7 +992,6 @@ graph
 torch
 happy
 grill
-chain
 hospital
 rocking chair
 ambulance
@@ -1232,13 +1233,13 @@ glue
 dominoes
 tape
 magic carpet
+door handle
 paint
 pea
 needle
 scarecrow
 railroad
 toaster
-doorknob
 scale
 lightsaber
 hole
@@ -1295,10 +1296,12 @@ sack
 sprinkler
 wood
 banjo
+mobile phone
 wooly mammoth
 hook
 brush
-grape
+grape juice
+drone
 apple pie
 paper clips
 bell pepper
@@ -1342,6 +1345,7 @@ wagon
 movie theater
 net
 throne
+squid
 ironing board
 lap
 gift
@@ -1426,6 +1430,7 @@ windmill
 limousine
 shovel
 hero
+braces
 mailman
 swimming pool
 honey
@@ -1505,6 +1510,7 @@ tadpole
 lucky
 eye patch
 golf
+Nail Polish
 battery
 hummingbird
 collar
@@ -1518,6 +1524,7 @@ video camera
 baker
 taxi
 curtain
+Minion
 stamp
 pail
 cucumber
@@ -1554,6 +1561,7 @@ Jupiter
 gap
 astronaut
 class
+skunk
 tractor
 snow
 mud
@@ -1561,10 +1569,13 @@ straw
 harmonica
 summer
 crust
+mother
+Mr Potato Head
 robin
 plate
+lemon
 violin
-silverware
+cutlery
 sponge
 escalator
 compass
@@ -1583,8 +1594,6 @@ yardstick
 trapeze
 skirt
 dirt
-shallow
-stain
 treasure
 safe
 fax
@@ -1684,11 +1693,7 @@ amusement park
 chisel
 fizz
 fog
-customer
-mayor
 miner
-mascot
-receipt
 cliff
 chain mail
 carpenter
@@ -1751,7 +1756,7 @@ pet store
 scream
 coastline
 stadium
-speakers
+speaker
 firefighter
 mine
 wool
@@ -1833,4 +1838,4 @@ gold medal
 costume
 recycle
 cruise ship
-catalog
+catalogue
