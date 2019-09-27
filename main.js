@@ -155,7 +155,7 @@ async function fetchWords(url) {
     const response = await fetch(url)
     const text = await response.text();
 
-    let a = text.split("\n"); // convert to array
+    let a = text.toLowerCase().split("\n"); // convert to array
     a = a.filter(function(n){ return n != '' }); // remove empty items in array
     a = a.removeDuplicateItems();
 
