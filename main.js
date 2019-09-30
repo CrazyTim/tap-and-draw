@@ -1,124 +1,42 @@
-var words = [];
-var levels = [ [],[],[] ];   // array of arrays, each one holding list of words
-var level = -1; 
-var intro = '<span class="intro">Tap to see <br> a new word.</span>';
-var showNextWord_transition = false;
-var bg_color = randomColor({luminosity: 'light'});
+let isWordChanging = false;
+const levels = [ [],[],[] ];   // array of arrays, each one holding list of words
+const colorSettings = {luminosity: 'light'};
 var state = {
   isLevelVisible: false,
   isHelpVisible: false,
+  backgroundColor: '#ffccdd',
+  level: 0,
+  words: [],
+  currentWord: -1,
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  initalise();
-});
+window.addEventListener('DOMContentLoaded', initalise);
 
-function showNextWord() {
+async function initalise() {
 
-	// start animation
-	if (!showNextWord_transition) {
-		showNextWord_transition = true;
-	
-		$('.btn-word').fadeOut(100, function() {
+  levels[0] = await fetchWords('words/0.txt');
+  levels[1] = await fetchWords('words/1.txt');
+  levels[2] = await fetchWords('words/2.txt');
 
-			// pull a random word from the hat
-			var random_word = words.removeRandomElement();
-			$('.btn-word').html( '<span class="word">' + random_word + '</span>' );
+  setLevel(state.level);
 
-			// change the background color:
-			bg_color = randomColor({luminosity: 'light'});
-			document.body.style.backgroundColor = bg_color;
+  renderBackground();
+  renderWord();
 
-			// if we run out of words, repopulate the list so we can start again
-			if (words.length == 0) {
-				setWords();
+  replaceHistory();
 
-				// remove the last word we showed, so we dont repeat it twice in a row:
-				var i = words.indexOf(random_word);
-				words.splice(i,1);
-			}
+  $('.dia-main').fadeIn(500); // fade-in main dialog
 
-			$('.btn-word').fadeIn(100, function() {
-				// finished animation
-				showNextWord_transition = false;
-			});
-		});
-	}
-	
-}
+  // event listeners -----------------------------------------
+  window.addEventListener('popstate', loadHistory);
+  document.querySelector('.btn-word').onmousedown = setNextWord;
+  document.querySelector('.btn-level').onmousedown = handleLevelDialogOpen;
+  document.querySelectorAll('.btn-set-level').forEach(el => el.onmousedown = handleLevelDialogClose);
+  document.querySelector('.dia-level .bg-shade').onmousedown = handleLevelDialogCancel;
+  document.querySelector('.btn-help').onmousedown = handleHelpDialogOpen;
+  document.querySelector('.btn-hide-help').onmousedown = handleHelpDialogClose;
+  document.querySelector('.dia-help .bg-shade').onmousedown = handleHelpDialogCancel;
 
-function setWords() {
-	words = levels[level].slice();
-}
-
-function showLevel(show) {
-	if (show == true) {
-		$('.dia-main').fadeOut(100, function() {
-			// finished animation
-			$('.dia-level').fadeIn(100);
-		});
-
-		state.isLevelVisible = true;
-
-	} else {
-		$('.dia-level').fadeOut(100, function() {
-			// finished animation
-			$('.dia-main').fadeIn(100);
-		});
-
-		state.isLevelVisible = false;
-	}
-}
-
-function showHelp(show) {
-	if (show == true) {
-		$('.dia-main').fadeOut(100, function() {
-			// finished animation
-			$('.dia-help').fadeIn(100);
-		});
-
-		isHelpVisible = true;
-	} else {
-		$('.dia-help').fadeOut(100, function() {
-			// finished animation
-			$('.dia-main').fadeIn(100);
-		});
-
-		isHelpVisible = false;
-	}
-}
-
-function setLevel(i) {
-	// set the difficulty
-	if (i == 'easy') {
-		if (level != 0 ) {
-			level = 0;
-			setWords(); // load the word list
-			$('.btn-word').html(intro); 
-		}
-	} else if (i == 'medium') {
-		if (level != 1 ) {
-			level = 1;
-			setWords(); // load the word list
-			$('.btn-word').html(intro); 
-		}
-	} else if (i == 'hard') {
-		if (level != 2 ) {
-			level = 2;
-			setWords(); // load the word list
-			$('.btn-word').html(intro); 
-		}
-	}
-
-	$('.btn-level').html(i);
-}
-
-function saveHistory() {
-	window.history.pushState(state, null, null);
-}
-
-function iniHistory() {
-	window.history.replaceState(state,null, null);
 }
 
 Array.prototype.removeDuplicateItems = function () {
@@ -151,7 +69,10 @@ Array.prototype.removeRandomElement = function() {
 
 async function fetchWords(url) {
 
+  let a = ['err-0','err-1','err-2','err-3','err-4'];
+  
   try {
+
     const response = await fetch(url)
     const text = await response.text();
 
@@ -159,101 +80,211 @@ async function fetchWords(url) {
     a = a.filter(function(n){ return n != '' }); // remove empty items in array
     a = a.removeDuplicateItems();
 
-    return a;
-
   } catch (err) {
-      console.error(err);
+      //console.error(err);
   }
 
-  return ['error'];
+  return a;
+
+}
+
+function setNextWord() {
+
+  // start animation
+  if (!isWordChanging) {
+    isWordChanging = true;
+    $('.word-wrapper').fadeOut(100, () => {
+
+      state.currentWord +=1;
+
+      // loop back to the beginning once we reach the end
+      if (state.currentWord > state.words.length - 1) {
+        state.currentWord = 0;
+      }
+
+      state.backgroundColor = getRandomColor();
+
+      renderWord();
+      renderBackground();
+
+      saveHistory();
+
+      $('.word-wrapper').fadeIn(100, () => {
+        // finished animation
+        isWordChanging = false;
+      });
+
+    });
+  }
   
 }
 
-function loadHistory(newState) {
+function handleLevelDialogOpen () {
+  document.querySelector('.btn-level').classList.add('btn-click');
+  window.setTimeout( () => {
+    document.querySelector('.btn-level').classList.remove('btn-click');
+    state.isLevelVisible = true;
+    renderLevelDialog();
+    saveHistory();
+  }, 50);
+}
 
-	if (state.isLevelVisible !== newState.isLevelVisible) {
-		state.isLevelVisible = newState.isLevelVisible;
-		showLevel(state.isLevelVisible);
-	}
+function handleLevelDialogClose(event) {
 
-	if (state.isHelpVisible !== newState.isHelpVisible) {
-		isHelpVisible = newState.isHelpVisible;
-		showHelp(state.isHelpVisible);
-	}
+  document.querySelectorAll('.btn-set-level').forEach(el => el.classList.remove('sel'));
+  const el = event.target;
+  el.classList.add('sel');
+  el.classList.add('btn-click');
+
+  window.setTimeout( () => {
+    el.classList.remove('btn-click');
+    const newLevel = el.getAttribute('id');
+    if (state.level != newLevel) {
+      setLevel(newLevel);
+      state.isLevelVisible = false;
+      replaceHistory();
+    } else {
+      window.history.back();
+    }
+    renderLevelDialog();
+  }, 50);
 
 }
 
-async function initalise() {
+function handleLevelDialogCancel() {
+  window.history.back();
+  renderLevelDialog()
+}
 
-  // fetch words
-  levels[0] = await fetchWords('words/0.txt');
-  levels[1] = await fetchWords('words/1.txt');
-  levels[2] = await fetchWords('words/2.txt');
+function handleHelpDialogOpen () {
+  document.querySelector('.btn-help').classList.add('btn-click');
+  window.setTimeout( () => {
+    document.querySelector('.btn-help').classList.remove('btn-click');
+    state.isHelpVisible = true;
+    renderHelpDialog();
+    saveHistory();
+  }, 50);
+}
 
-  document.body.style.backgroundColor = bg_color;
-
-  setLevel('easy');
-  iniHistory();
-  $('.dia-main').fadeIn(0);
-
-  $( '.tab-main' ).mousedown(function() {
-    showNextWord();
-    });
-
-  $( '.btn-level' ).mousedown(function() {
-      $('.btn-level').addClass('btn-click');
-    window.setTimeout( function() {
-      showLevel(true);
-      saveHistory();
-      $('.btn-level').removeClass('btn-click');
-    }, 50 );
-    });
-
-    $( '.btn-set-level' ).mousedown(function() {
-    var l = $(this).html();
-    var el = this;
-      $('.btn-set-level').removeClass('sel');
-      $(el).addClass('sel');
-      $(el).addClass('btn-click');
-    window.setTimeout( function() {
-      setLevel(l)
-      showLevel(false);
-      window.history.back();
-      $(el).removeClass('btn-click');
-    }, 50 );
-    });
-
-    $( '.dia-level .bg-shade' ).mousedown(function() {
-    showLevel(false);
+function handleHelpDialogClose() {
+  document.querySelector('.btn-hide-help').classList.add('btn-click');
+  window.setTimeout( () => {
+    document.querySelector('.btn-hide-help').classList.remove('btn-click');
     window.history.back();
-    });
+    renderHelpDialog();
+  }, 50);
+}
 
-  $( '.btn-help' ).mousedown(function() {
-      $('.btn-help').addClass('btn-click');
-    window.setTimeout( function() {
-      showHelp(true);
-      saveHistory();
-      $('.btn-help').removeClass('btn-click');
-    }, 50 );
-    });
+function handleHelpDialogCancel() {
+  window.history.back();
+  renderHelpDialog();
+}
 
-  $( '.btn-hide-help' ).mousedown(function() {
-      $('.btn-hide-help').addClass('btn-click');
-    window.setTimeout( function() {
-      showHelp(false);
-      window.history.back();
-      $('.btn-hide-help').removeClass('btn-click');
-    }, 50 );
-    });
+function setLevel(level) {
+  state.level = parseInt(level);
+  state.currentWord = -1;
+  state.words = [];
 
-  $( '.dia-help .bg-shade' ).mousedown(function() {
-    showHelp(false);
-    window.history.back();
-    });
+  // shuffle the list
+  const words = levels[state.level].slice(); // clone
+  while (words.length > 0) {
+    state.words.push(words.removeRandomElement());
+  }
 
-    window.addEventListener('popstate', function(e) {
-    //console.log(e.state);
-        loadHistory(e.state);
-  });
- 
+  renderWord();
+  renderLevel();
+}
+
+function getRandomColor () {
+  return randomColor(colorSettings);
+}
+
+function replaceHistory() {
+  console.log(state);
+  window.history.replaceState(state, null, null);
+}
+
+function saveHistory() {
+  console.log(state);
+  window.history.pushState(state, null, null);
+}
+
+function loadHistory(event) {
+  state = event.state;
+  console.log(state);
+  renderLevelDialog();
+  renderHelpDialog();
+  renderLevel();
+  renderWord();
+  renderBackground();
+}
+
+function showDialog_Level() {
+  state.isLevelVisible = true;
+  renderLevelDialog();
+  document.querySelector('.btn-level').classList.remove('btn-click');
+}
+
+function hideDialog_Level() {
+  state.isLevelVisible = false;
+  renderLevelDialog();
+  document.querySelector('.btn-set-level').classList.remove('btn-click');
+}
+
+function renderLevel() {
+  const el = document.querySelector('.btn-level');
+  if (state.level === 0) {
+    el.innerHTML = 'easy';
+  } else if (state.level === 1) {
+    el.innerHTML = 'medium';
+  } else if (state.level === 2) {
+    el.innerHTML = 'hard';
+  }
+  document.querySelectorAll('.btn-set-level').forEach(el => el.classList.remove('set'));
+  document.querySelector(`.btn-set-level[id='${state.level}']`).classList.add('set');
+}
+
+function renderLevelDialog() {
+  if (state.isLevelVisible) {
+    $('.dia-main').fadeOut(100, () => {
+      // finished animation
+      $('.dia-level').fadeIn(100);
+    });
+  } else {
+    $('.dia-level').fadeOut(100, () => {
+      // finished animation
+      $('.dia-main').fadeIn(100);
+    });
+  }
+}
+
+function renderHelpDialog() {
+  if (state.isHelpVisible) {
+    $('.dia-main').fadeOut(100, () => {
+      // finished animation
+      $('.dia-help').fadeIn(100);
+    });
+  } else {
+    $('.dia-help').fadeOut(100, () => {
+      // finished animation
+      $('.dia-main').fadeIn(100);
+    });
+  }
+}
+
+function renderBackground() {
+  document.body.style.backgroundColor = state.backgroundColor;
+}
+
+function renderWord() {
+  const el = document.querySelector('.word-wrapper');
+  if (state.currentWord !== -1) {
+    el.innerHTML = state.words[state.currentWord];
+    el.classList.add('word');
+    el.classList.remove('intro');
+  } else {
+    el.innerHTML = 'Tap to see<br>a new word';
+    el.classList.remove('word');
+    el.classList.add('intro');
+  }
 }
