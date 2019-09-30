@@ -3,9 +3,11 @@ var levels = [ [],[],[] ];   // array of arrays, each one holding list of words
 var level = -1; 
 var intro = '<span class="intro">Tap to see <br> a new word.</span>';
 var showNextWord_transition = false;
-var level_visible = false;
-var help_visible = false;
 var bg_color = randomColor({luminosity: 'light'});
+var state = {
+  isLevelVisible: false,
+  isHelpVisible: false,
+}
 
 window.addEventListener('DOMContentLoaded', () => {
   initalise();
@@ -56,7 +58,7 @@ function showLevel(show) {
 			$('.dia-level').fadeIn(100);
 		});
 
-		level_visible = true;
+		state.isLevelVisible = true;
 
 	} else {
 		$('.dia-level').fadeOut(100, function() {
@@ -64,7 +66,7 @@ function showLevel(show) {
 			$('.dia-main').fadeIn(100);
 		});
 
-		level_visible = false;
+		state.isLevelVisible = false;
 	}
 }
 
@@ -75,14 +77,14 @@ function showHelp(show) {
 			$('.dia-help').fadeIn(100);
 		});
 
-		help_visible = true;
+		isHelpVisible = true;
 	} else {
 		$('.dia-help').fadeOut(100, function() {
 			// finished animation
 			$('.dia-main').fadeIn(100);
 		});
 
-		help_visible = false;
+		isHelpVisible = false;
 	}
 }
 
@@ -112,12 +114,10 @@ function setLevel(i) {
 }
 
 function saveHistory() {
-	var state = {'level_visible':level_visible, 'help_visible':help_visible}
 	window.history.pushState(state, null, null);
 }
 
 function iniHistory() {
-	var state = {'level_visible':level_visible, 'help_visible':help_visible}
 	window.history.replaceState(state,null, null);
 }
 
@@ -169,18 +169,18 @@ async function fetchWords(url) {
   
 }
 
-function loadHistory(state) {
-	// hide level if nessecary
-	if (state.level_visible != level_visible) {
-		level_visible = state.level_visible;
-		showLevel(level_visible);
+function loadHistory(newState) {
+
+	if (state.isLevelVisible !== newState.isLevelVisible) {
+		state.isLevelVisible = newState.isLevelVisible;
+		showLevel(state.isLevelVisible);
 	}
 
-	// hide help if nessecary
-	if (state.help_visible != help_visible) {
-		help_visible = state.help_visible;
-		showHelp(help_visible);
+	if (state.isHelpVisible !== newState.isHelpVisible) {
+		isHelpVisible = newState.isHelpVisible;
+		showHelp(state.isHelpVisible);
 	}
+
 }
 
 async function initalise() {
