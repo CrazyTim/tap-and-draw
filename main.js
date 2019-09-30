@@ -39,12 +39,11 @@ async function initalise() {
 
 }
 
-Array.prototype.removeDuplicateItems = function () {
-  var seen = {};
-  var out = [];
-  var len = this.length;
-  var j = 0;
-  for(var i = 0; i < len; i++) {
+function removeDuplicates(array) {
+  const seen = {};
+  const out = [];
+  let j = 0;
+  for(let i = 0; i < array.length; i++) {
        var item = this[i];
        if(seen[item] !== 1) {
              seen[item] = 1;
@@ -54,16 +53,16 @@ Array.prototype.removeDuplicateItems = function () {
   return out;
 }
 
-Array.prototype.removeRandomElement = function() {
-  if (this.length == 0) {
+function popRandom(array) {
+  if (array.length == 0) {
     return;
-  } else if (this.length == 1) {
-    return this.splice(0,1)[0];
+  } else if (array.length == 1) {
+    return array.splice(0,1)[0];
   } else {
-  // choose a random item
-  var i = Math.floor(Math.random() * this.length);
-  // return a new list with the item removed
-  return this.splice(i,1)[0];
+    // choose a random item
+    var i = Math.floor(Math.random() * array.length);
+    // return a new list with the item removed
+    return array.splice(i,1)[0];
   }
 }
 
@@ -78,7 +77,7 @@ async function fetchWords(url) {
 
     let a = text.toLowerCase().split("\n"); // convert to array
     a = a.filter(function(n){ return n != '' }); // remove empty items in array
-    a = a.removeDuplicateItems();
+    a = removeDuplicates(a);
 
   } catch (err) {
       //console.error(err);
@@ -188,7 +187,7 @@ function setLevel(level) {
   // shuffle the list
   const words = levels[state.level].slice(); // clone
   while (words.length > 0) {
-    state.words.push(words.removeRandomElement());
+    state.words.push(popRandom(words));
   }
 
   renderWord();
