@@ -17,11 +17,11 @@ function showNextWord() {
 	if (!showNextWord_transition) {
 		showNextWord_transition = true;
 	
-		$('#btn_word').fadeOut(100, function() {
+		$('.btn-word').fadeOut(100, function() {
 
 			// pull a random word from the hat
 			var random_word = words.removeRandomElement();
-			$('#btn_word').html( '<span class="word">' + random_word + '</span>' );
+			$('.btn-word').html( '<span class="word">' + random_word + '</span>' );
 
 			// change the background color:
 			bg_color = randomColor({luminosity: 'light'});
@@ -36,7 +36,7 @@ function showNextWord() {
 				words.splice(i,1);
 			}
 
-			$('#btn_word').fadeIn(100, function() {
+			$('.btn-word').fadeIn(100, function() {
 				// finished animation
 				showNextWord_transition = false;
 			});
@@ -51,17 +51,17 @@ function setWords() {
 
 function showLevel(show) {
 	if (show == true) {
-		$('#dia_main').fadeOut(100, function() {
+		$('.dia-main').fadeOut(100, function() {
 			// finished animation
-			$('#dia_level').fadeIn(100);
+			$('.dia-level').fadeIn(100);
 		});
 
 		level_visible = true;
 
 	} else {
-		$('#dia_level').fadeOut(100, function() {
+		$('.dia-level').fadeOut(100, function() {
 			// finished animation
-			$('#dia_main').fadeIn(100);
+			$('.dia-main').fadeIn(100);
 		});
 
 		level_visible = false;
@@ -70,16 +70,16 @@ function showLevel(show) {
 
 function showHelp(show) {
 	if (show == true) {
-		$('#dia_main').fadeOut(100, function() {
+		$('.dia-main').fadeOut(100, function() {
 			// finished animation
-			$('#dia_help').fadeIn(100);
+			$('.dia-help').fadeIn(100);
 		});
 
 		help_visible = true;
 	} else {
-		$('#dia_help').fadeOut(100, function() {
+		$('.dia-help').fadeOut(100, function() {
 			// finished animation
-			$('#dia_main').fadeIn(100);
+			$('.dia-main').fadeIn(100);
 		});
 
 		help_visible = false;
@@ -92,23 +92,23 @@ function setLevel(i) {
 		if (level != 0 ) {
 			level = 0;
 			setWords(); // load the word list
-			$('#btn_word').html(intro); 
+			$('.btn-word').html(intro); 
 		}
 	} else if (i == 'medium') {
 		if (level != 1 ) {
 			level = 1;
 			setWords(); // load the word list
-			$('#btn_word').html(intro); 
+			$('.btn-word').html(intro); 
 		}
 	} else if (i == 'hard') {
 		if (level != 2 ) {
 			level = 2;
 			setWords(); // load the word list
-			$('#btn_word').html(intro); 
+			$('.btn-word').html(intro); 
 		}
 	}
 
-	$('#btn_level').html(i);
+	$('.btn-level').html(i);
 }
 
 function saveHistory() {
@@ -194,59 +194,59 @@ async function initalise() {
 
   setLevel('easy');
   iniHistory();
-  $('#dia_main').fadeIn(0);
+  $('.dia-main').fadeIn(0);
 
-  $( '#tab_main' ).mousedown(function() {
+  $( '.tab-main' ).mousedown(function() {
     showNextWord();
     });
 
-  $( '#btn_level' ).mousedown(function() {
-      $('#btn_level').addClass('btn_click');
+  $( '.btn-level' ).mousedown(function() {
+      $('.btn-level').addClass('btn-click');
     window.setTimeout( function() {
       showLevel(true);
       saveHistory();
-      $('#btn_level').removeClass('btn_click');
+      $('.btn-level').removeClass('btn-click');
     }, 50 );
     });
 
-    $( '.btn_setlevel' ).mousedown(function() {
+    $( '.btn-set-level' ).mousedown(function() {
     var l = $(this).html();
     var el = this;
-      $('.btn_setlevel').removeClass('sel');
+      $('.btn-set-level').removeClass('sel');
       $(el).addClass('sel');
-      $(el).addClass('btn_click');
+      $(el).addClass('btn-click');
     window.setTimeout( function() {
       setLevel(l)
       showLevel(false);
       window.history.back();
-      $(el).removeClass('btn_click');
+      $(el).removeClass('btn-click');
     }, 50 );
     });
 
-    $( '#dia_level .bg_shade' ).mousedown(function() {
+    $( '.dia-level .bg-shade' ).mousedown(function() {
     showLevel(false);
     window.history.back();
     });
 
-  $( '#btn_help' ).mousedown(function() {
-      $('#btn_help').addClass('btn_click');
+  $( '.btn-help' ).mousedown(function() {
+      $('.btn-help').addClass('btn-click');
     window.setTimeout( function() {
       showHelp(true);
       saveHistory();
-      $('#btn_help').removeClass('btn_click');
+      $('.btn-help').removeClass('btn-click');
     }, 50 );
     });
 
-  $( '#btn_hideHelp' ).mousedown(function() {
-      $('#btn_hideHelp').addClass('btn_click');
+  $( '.btn-hide-help' ).mousedown(function() {
+      $('.btn-hide-help').addClass('btn-click');
     window.setTimeout( function() {
       showHelp(false);
       window.history.back();
-      $('#btn_hideHelp').removeClass('btn_click');
+      $('.btn-hide-help').removeClass('btn-click');
     }, 50 );
     });
 
-  $( '#dia_help .bg_shade' ).mousedown(function() {
+  $( '.dia-help .bg-shade' ).mousedown(function() {
     showHelp(false);
     window.history.back();
     });
