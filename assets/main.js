@@ -1,6 +1,11 @@
 let isWordChanging = false;
-const levels = [ [],[],[] ];   // array of arrays, each one holding list of words
-const colorSettings = {luminosity: 'light'};
+const LEVELS = [ [],[],[] ];   // array of arrays, each one holding list of words
+const COLOR_SETTINGS = {luminosity: 'light'};
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+const DURATION_BTN_CLICK = 50;
+const DURATION_DIALOG_TRANSITION = 100;
+
 var state = {
   isLevelVisible: false,
   isHelpVisible: false,
@@ -14,28 +19,57 @@ window.addEventListener('DOMContentLoaded', initalise);
 
 async function initalise() {
 
-  levels[0] = await fetchWords('words/0.txt');
-  levels[1] = await fetchWords('words/1.txt');
-  levels[2] = await fetchWords('words/2.txt');
+  LEVELS[0] = await fetchWords('words/0.txt');
+  LEVELS[1] = await fetchWords('words/1.txt');
+  LEVELS[2] = await fetchWords('words/2.txt');
 
   setLevel(state.level);
-
   renderBackground();
   renderWord();
-
   replaceHistory();
-
-  $('.dia-main').fadeIn(500); // fade-in main dialog
+  fadeIn($('.dia-main')); // fade-in main dialog on app start
 
   // event listeners -----------------------------------------
   window.addEventListener('popstate', loadHistory);
-  document.querySelector('.btn-word').onmousedown = setNextWord;
-  document.querySelector('.btn-level').onmousedown = handleLevelDialogOpen;
-  document.querySelectorAll('.btn-set-level').forEach(el => el.onmousedown = handleLevelDialogClose);
-  document.querySelector('.dia-level .bg-shade').onmousedown = handleLevelDialogCancel;
-  document.querySelector('.btn-help').onmousedown = handleHelpDialogOpen;
-  document.querySelector('.btn-hide-help').onmousedown = handleHelpDialogClose;
-  document.querySelector('.dia-help .bg-shade').onmousedown = handleHelpDialogCancel;
+  $('.btn-show-level').onmousedown = handleLevelDialogOpen;
+  $$('.btn-set-level').forEach(el => el.onmousedown = handleLevelDialogClose);
+  $('.btn-show-help').onmousedown = handleHelpDialogOpen;
+  $('.btn-hide-help').onmousedown = handleHelpDialogClose;
+  $('.dia-main').onmousedown = handleSetWord;
+  $('.dia-level').onmousedown = handleLevelDialogCancel;
+  $('.dia-help').onmousedown = handleHelpDialogCancel;
+
+}
+
+function fadeOut(el, callBack) {
+
+  const style = window.getComputedStyle(el);
+  if (style.display == 'none') return; // already hidden
+  if (el.classList.contains('fade-in')) return; // already animating
+  if (el.classList.contains('fade-out')) return; // already animating
+
+  el.classList.add('fade-out');
+  setTimeout(function() {
+    el.classList.add('hide');
+    el.classList.remove('fade-out');
+    if (callBack !== undefined) callBack();
+  }, DURATION_DIALOG_TRANSITION);
+
+}
+
+function fadeIn(el, callBack) {
+
+  const style = window.getComputedStyle(el);
+  if (style.display != 'none') return; // already shown
+  if (el.classList.contains('fade-in')) return; // already animating
+  if (el.classList.contains('fade-out')) return; // already animating
+
+  el.classList.add('fade-in');
+  el.classList.remove('hide');
+  setTimeout(function() {
+    el.classList.remove('fade-in');
+    if (callBack !== undefined) callBack();
+  }, DURATION_DIALOG_TRANSITION);
 
 }
 
@@ -87,12 +121,16 @@ async function fetchWords(url) {
 
 }
 
-function setNextWord() {
+function handleSetWord(event) {
 
   // start animation
   if (!isWordChanging) {
+
     isWordChanging = true;
-    $('.word-wrapper').fadeOut(100, () => {
+
+    const wordWrapper = $('.word-wrapper')
+    
+    fadeOut(wordWrapper, () => {
 
       state.currentWord +=1;
 
@@ -102,42 +140,42 @@ function setNextWord() {
       }
 
       state.backgroundColor = getRandomColor();
-
       renderWord();
       renderBackground();
-
       saveHistory();
 
-      $('.word-wrapper').fadeIn(100, () => {
-        // finished animation
-        isWordChanging = false;
+      fadeIn(wordWrapper, () => {
+        isWordChanging = false; // animation finished
       });
 
     });
   }
+
+  event.stopPropagation();
   
 }
 
-function handleLevelDialogOpen () {
-  document.querySelector('.btn-level').classList.add('btn-click');
+function handleLevelDialogOpen (event) {
+  $('.btn-show-level').classList.add('btn-click');
   window.setTimeout( () => {
-    document.querySelector('.btn-level').classList.remove('btn-click');
+    $('.btn-show-level').classList.remove('btn-click');
     state.isLevelVisible = true;
     renderLevelDialog();
     saveHistory();
-  }, 50);
+  }, DURATION_BTN_CLICK);
+  event.stopPropagation();
 }
 
 function handleLevelDialogClose(event) {
 
-  document.querySelectorAll('.btn-set-level').forEach(el => el.classList.remove('sel'));
+  $$('.btn-set-level').forEach(el => el.classList.remove('sel'));
   const el = event.target;
   el.classList.add('sel');
   el.classList.add('btn-click');
 
   window.setTimeout( () => {
     el.classList.remove('btn-click');
-    const newLevel = el.getAttribute('id');
+    const newLevel = el.getAttribute('data-id');
     if (state.level != newLevel) {
       setLevel(newLevel);
       state.isLevelVisible = false;
@@ -146,56 +184,64 @@ function handleLevelDialogClose(event) {
       window.history.back();
     }
     renderLevelDialog();
-  }, 50);
+  }, DURATION_BTN_CLICK);
+
+  event.stopPropagation();
 
 }
 
-function handleLevelDialogCancel() {
+function handleLevelDialogCancel(event) {
   window.history.back();
-  renderLevelDialog()
+  renderLevelDialog();
+  event.stopPropagation();
 }
 
-function handleHelpDialogOpen () {
-  document.querySelector('.btn-help').classList.add('btn-click');
+function handleHelpDialogOpen (event) {
+  $('.btn-show-help').classList.add('btn-click');
   window.setTimeout( () => {
-    document.querySelector('.btn-help').classList.remove('btn-click');
+    $('.btn-show-help').classList.remove('btn-click');
     state.isHelpVisible = true;
     renderHelpDialog();
     saveHistory();
-  }, 50);
+  }, DURATION_BTN_CLICK);
+  event.stopPropagation();
 }
 
-function handleHelpDialogClose() {
-  document.querySelector('.btn-hide-help').classList.add('btn-click');
+function handleHelpDialogClose(event) {
+  $('.btn-hide-help').classList.add('btn-click');
   window.setTimeout( () => {
-    document.querySelector('.btn-hide-help').classList.remove('btn-click');
+    $('.btn-hide-help').classList.remove('btn-click');
     window.history.back();
     renderHelpDialog();
-  }, 50);
+  }, DURATION_BTN_CLICK);
+  event.stopPropagation();
 }
 
-function handleHelpDialogCancel() {
+function handleHelpDialogCancel(event) {
   window.history.back();
   renderHelpDialog();
+  event.stopPropagation();
 }
 
 function setLevel(level) {
+
   state.level = parseInt(level);
   state.currentWord = -1;
   state.words = [];
 
-  // shuffle the list
-  const words = levels[state.level].slice(); // clone
+  // shuffle words
+  const words = LEVELS[state.level].slice(); // clone
   while (words.length > 0) {
     state.words.push(popRandom(words));
   }
 
   renderWord();
   renderLevel();
+
 }
 
 function getRandomColor () {
-  return randomColor(colorSettings);
+  return randomColor(COLOR_SETTINGS);
 }
 
 function replaceHistory() {
@@ -218,20 +264,8 @@ function loadHistory(event) {
   renderBackground();
 }
 
-function showDialog_Level() {
-  state.isLevelVisible = true;
-  renderLevelDialog();
-  document.querySelector('.btn-level').classList.remove('btn-click');
-}
-
-function hideDialog_Level() {
-  state.isLevelVisible = false;
-  renderLevelDialog();
-  document.querySelector('.btn-set-level').classList.remove('btn-click');
-}
-
 function renderLevel() {
-  const el = document.querySelector('.btn-level');
+  const el = $('.btn-show-level');
   if (state.level === 0) {
     el.innerHTML = 'easy';
   } else if (state.level === 1) {
@@ -239,35 +273,39 @@ function renderLevel() {
   } else if (state.level === 2) {
     el.innerHTML = 'hard';
   }
-  document.querySelectorAll('.btn-set-level').forEach(el => el.classList.remove('set'));
-  document.querySelector(`.btn-set-level[id='${state.level}']`).classList.add('set');
+  $$('.btn-set-level').forEach(el => el.classList.remove('set'));
+  $(`.btn-set-level[data-id='${state.level}']`).classList.add('set');
 }
 
 function renderLevelDialog() {
+
+  const diaMain = $('.dia-main');
+  const diaLevel = $('.dia-level');
+
   if (state.isLevelVisible) {
-    $('.dia-main').fadeOut(100, () => {
-      // finished animation
-      $('.dia-level').fadeIn(100);
-    });
+    fadeOut(diaMain, () => {
+      fadeIn(diaLevel);
+    })
   } else {
-    $('.dia-level').fadeOut(100, () => {
-      // finished animation
-      $('.dia-main').fadeIn(100);
-    });
+    fadeOut(diaLevel, () => {
+      fadeIn(diaMain);
+    })
   }
 }
 
 function renderHelpDialog() {
+
+  const diaMain = $('.dia-main');
+  const diaHelp = $('.dia-help');
+
   if (state.isHelpVisible) {
-    $('.dia-main').fadeOut(100, () => {
-      // finished animation
-      $('.dia-help').fadeIn(100);
-    });
+    fadeOut(diaMain, () => {
+      fadeIn(diaHelp);
+    })
   } else {
-    $('.dia-help').fadeOut(100, () => {
-      // finished animation
-      $('.dia-main').fadeIn(100);
-    });
+    fadeOut(diaHelp, () => {
+      fadeIn(diaMain);
+    })
   }
 }
 
@@ -276,7 +314,7 @@ function renderBackground() {
 }
 
 function renderWord() {
-  const el = document.querySelector('.word-wrapper');
+  const el = $('.word-wrapper');
   if (state.currentWord !== -1) {
     el.innerHTML = state.words[state.currentWord];
     el.classList.add('word');

@@ -1,0 +1,122 @@
+* {
+  cursor: default;
+  margin: 0;
+}
+
+html {
+  width: 100%;
+}
+
+body {
+  font-size: 15pt;
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 800ms linear;  
+  user-select: none;
+}
+
+/*-----------------------------------*/
+
+.btn {
+  border-radius: 7px;
+  cursor: pointer;
+  pointer-events: all;
+  padding: 7px 15px;
+  transition: background-color 100ms linear;
+  transition: border-color 100ms linear;
+  transition: color 100ms linear;
+}
+
+  .btn, .btn span {
+    user-select: none;
+  }
+
+  .btn-click {
+    background-color: rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.6);
+  }
+
+  .sel {
+    border: 2px solid rgba(0,0,0,0.4);
+  }
+
+/*-----------------------------------*/
+
+.dialog {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+/*-----------------------------------*/
+
+.dia-main {
+  grid-template-rows: auto minmax(110px, 25%);
+}
+
+  .dia-main .btn-wrapper  {
+    grid-auto-flow: column;
+    display: grid;
+    margin: 0px 60px;
+    justify-self: stretch;
+    align-self: stretch;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .btn-word .word-wrapper {
+    pointer-events: none;
+  }
+
+  .btn-word .word {
+    font-size: 30pt;
+    word-wrap:break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .btn-word .intro {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20pt;
+  }
+
+/*-----------------------------------*/
+
+.fade-out {
+  animation-name: fade-out;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+.fade-in {
+  animation-name: fade-in;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fade-out {
+  0%   {display: grid; opacity: 1;}
+  100% {display: none; opacity: 0;}
+}
+
+@keyframes fade-in {
+  0%   {display: grid; opacity: 0;}
+  100% {display: grid; opacity: 1;}
+}
+
+.hide {
+  display: none;
+}
