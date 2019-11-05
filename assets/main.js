@@ -78,11 +78,11 @@ function removeDuplicates(array) {
   const out = [];
   let j = 0;
   for(let i = 0; i < array.length; i++) {
-       var item = this[i];
-       if(seen[item] !== 1) {
-             seen[item] = 1;
-             out[j++] = item;
-       }
+     var item = array[i];
+     if(seen[item] !== 1) {
+       seen[item] = 1;
+       out[j++] = item;
+     }
   }
   return out;
 }
@@ -102,19 +102,19 @@ function popRandom(array) {
 
 async function fetchWords(url) {
 
-  let a = ['err-0','err-1','err-2','err-3','err-4'];
+  let a = ['err-0','err-1','err-1','err-2','err-3','err-4']; // test data, will be overridden
   
   try {
 
     const response = await fetch(url)
     const text = await response.text();
 
-    let a = text.toLowerCase().split("\n"); // convert to array
+    a = text.toLowerCase().split("\n"); // convert to array
     a = a.filter(function(n){ return n != '' }); // remove empty items in array
     a = removeDuplicates(a);
 
   } catch (err) {
-      //console.error(err);
+      console.error(err);
   }
 
   return a;
