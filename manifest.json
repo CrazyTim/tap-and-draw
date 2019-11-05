@@ -3,5 +3,5 @@
   "name": "Tap & Draw",
   "start_url": "./index.html",
   "background_color": "#ffffff",
-  "display": "fullscreen"
+  "display": "standalone"
 }
