@@ -9,112 +9,39 @@
   <link rel='manifest' href='manifest.json'>
   <meta name='mobile-web-app-capable' content='yes'>
   <meta name='apple-mobile-web-app-capable' content='yes'>
-
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,700' rel='stylesheet'>
-
-  <link rel='stylesheet' type='text/css' href='style.css'>
-
-  <!-- jquery used for conveinience -->
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-
-  <!-- randomColor.js used to generate a random color for the background -->
-  <script src='randomColor.js'></script>
-
-  <script src='main.js'></script>
+  <link rel='stylesheet' type='text/css' href='assets/style.css'>
+  <script src='assets/randomColor.js'></script> <!-- used to generate a random color for the background -->
+  <script src='assets/main.js'></script>
 </head>
 
-<body id='home' onmouseover='' ontouchstart=''>
-  <div id='dia_main' class='dialog'>
-    <div id='tab_main'>
-      <div id='btn_word'></div>
+<body>
+  
+  <div class='dialog dia-main hide'>
+    <div class='btn btn-word'>
+      <div class='word-wrapper'></div>
     </div>
-    <table class='tab_menu'>
-      <tr>
-        <td></td>
-        <!--<td><span id='btn_hint' class='btn sel'>hint</span></td>-->
-        <td><span id='btn_level' class='btn sel'>easy</span></td>
-        <td><span id='btn_help' class='btn sel'>?</span></td>
-        <td></td>
-      </tr>
-    </table>
+    <div class='btn-wrapper'>
+      <span></span>
+      <div class='btn btn-show-level sel'>easy</div>
+      <div class='btn btn-show-help sel'>?</div>
+      <span></span>
     </div>
-
-  <div id='dia_level' class='dialog'>
-    <div class='bg_shade'></div>
-    <table id='tab_level'>
-      <tr>
-        <td>
-          <span> </span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span> </span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span class='btn btn_setlevel sel'>easy</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span class='btn btn_setlevel'>medium</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span class='btn btn_setlevel'>hard</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span> </span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span> </span>
-        </td>
-      </tr>
-    </table>
   </div>
 
-  <div id='dia_help' class='dialog'>
-    <div class='bg_shade'></div>
-    <table id='tab_level'>
-      <tr>
-      <tr>
-        <td>
-          <span> </span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span> </span>
-        </td>
-      </tr>
-      <tr>
-        <td class='pad'>
-          <span>A simple app to help you<br>play pictionary!<br><br>Like if you're on holiday<br>and forgot to bring pictionary<br>with you :)</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span id='btn_hideHelp' class='btn sel'>ok</span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span> </span>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <span> </span>
-        </td>
-      </tr>
-    </table>
+  <div class='dialog dia-level hide'>
+    <span></span>
+    <div class='btn btn-set-level sel' data-id='0'>easy</div>
+    <div class='btn btn-set-level' data-id='1'>medium</div>
+    <div class='btn btn-set-level' data-id='2'>hard</div>
+    <span></span>
+  </div>
+
+  <div class='dialog dia-help hide'>
+    <span></span>
+    <div class='text'>A simple app to help you<br>play pictionary!<br><br>Like if you're on holiday<br>and forgot to bring pictionary<br>with you :)</div>
+    <div class='btn btn-hide-help sel'>ok</div>
+    <span></span>
   </div>
 
 </body>
