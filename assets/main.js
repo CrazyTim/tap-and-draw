@@ -13,6 +13,7 @@ var state = {
   level: 0,
   words: [],
   currentWord: -1,
+  historyLevel: 0, // so we know how far we can go back
 }
 
 window.addEventListener('DOMContentLoaded', initalise);
@@ -28,6 +29,7 @@ async function initalise() {
   renderBackground();
   renderWord();
   replaceHistory();
+  renderHistoryButtons();
   fadeIn($('.dia-main')); // fade-in main dialog on app start
 
   // event listeners -----------------------------------------
@@ -39,7 +41,7 @@ async function initalise() {
   $('.dia-main').onmousedown = handleSetWord;
   $('.dia-level').onmousedown = handleLevelDialogCancel;
   $('.dia-help').onmousedown = handleHelpDialogCancel;
-
+  $('.btn-history-back').onmousedown = handleGoBack;
 }
 
 function initaliseServiceWorker() {
@@ -54,7 +56,7 @@ function initaliseServiceWorker() {
   }
 }
 
-function fadeOut(el, callBack) {
+function fadeOut(el, callback) {
 
   const style = window.getComputedStyle(el);
   if (style.display == 'none') return; // already hidden
@@ -65,12 +67,12 @@ function fadeOut(el, callBack) {
   setTimeout(function() {
     el.classList.add('hide');
     el.classList.remove('fade-out');
-    if (callBack !== undefined) callBack();
+    if (callback !== undefined) callback();
   }, DURATION_DIALOG_TRANSITION);
 
 }
 
-function fadeIn(el, callBack) {
+function fadeIn(el, callback) {
 
   const style = window.getComputedStyle(el);
   if (style.display != 'none') return; // already shown
@@ -81,9 +83,17 @@ function fadeIn(el, callBack) {
   el.classList.remove('hide');
   setTimeout(function() {
     el.classList.remove('fade-in');
-    if (callBack !== undefined) callBack();
+    if (callback !== undefined) callback();
   }, DURATION_DIALOG_TRANSITION);
 
+}
+
+function buttonClick(el, callback) {
+  el.classList.add('clicked');
+  window.setTimeout( () => {
+    el.classList.remove('clicked');
+    callback();
+  }, DURATION_BTN_CLICK);
 }
 
 function removeDuplicates(array) {
@@ -122,7 +132,7 @@ async function fetchWords(url) {
     const response = await fetch(url)
     const text = await response.text();
 
-    a = text.toLowerCase().split("\n"); // convert to array
+    a = text.toLowerCase().split('\n'); // convert to array
     a = a.filter(function(n){ return n != '' }); // remove empty items in array
     a = removeDuplicates(a);
 
@@ -135,6 +145,7 @@ async function fetchWords(url) {
 }
 
 function handleSetWord(event) {
+  event.stopPropagation();
 
   // start animation
   if (!isWordChanging) {
@@ -163,32 +174,27 @@ function handleSetWord(event) {
 
     });
   }
-
-  event.stopPropagation();
-  
 }
 
 function handleLevelDialogOpen (event) {
-  $('.btn-show-level').classList.add('btn-click');
-  window.setTimeout( () => {
-    $('.btn-show-level').classList.remove('btn-click');
+  event.stopPropagation();
+
+  buttonClick(event.target, () => {
     state.isLevelVisible = true;
     renderLevelDialog();
     saveHistory();
-  }, DURATION_BTN_CLICK);
-  event.stopPropagation();
+  })
 }
 
 function handleLevelDialogClose(event) {
+  event.stopPropagation();
 
   $$('.btn-set-level').forEach(el => el.classList.remove('sel'));
   const el = event.target;
   el.classList.add('sel');
-  el.classList.add('btn-click');
+  const newLevel = el.getAttribute('data-id');
 
-  window.setTimeout( () => {
-    el.classList.remove('btn-click');
-    const newLevel = el.getAttribute('data-id');
+  buttonClick(el, () => {
     if (state.level != newLevel) {
       setLevel(newLevel);
       state.isLevelVisible = false;
@@ -197,43 +203,59 @@ function handleLevelDialogClose(event) {
       window.history.back();
     }
     renderLevelDialog();
-  }, DURATION_BTN_CLICK);
-
-  event.stopPropagation();
-
+  })
 }
 
 function handleLevelDialogCancel(event) {
+  event.stopPropagation();
   window.history.back();
   renderLevelDialog();
-  event.stopPropagation();
 }
 
 function handleHelpDialogOpen (event) {
-  $('.btn-show-help').classList.add('btn-click');
-  window.setTimeout( () => {
-    $('.btn-show-help').classList.remove('btn-click');
+  event.stopPropagation();
+
+  buttonClick(event.target, () => {
     state.isHelpVisible = true;
     renderHelpDialog();
     saveHistory();
-  }, DURATION_BTN_CLICK);
-  event.stopPropagation();
+  })
 }
 
 function handleHelpDialogClose(event) {
-  $('.btn-hide-help').classList.add('btn-click');
-  window.setTimeout( () => {
-    $('.btn-hide-help').classList.remove('btn-click');
+  event.stopPropagation();
+
+   buttonClick(event.target, () => {
     window.history.back();
     renderHelpDialog();
-  }, DURATION_BTN_CLICK);
-  event.stopPropagation();
+  })
 }
 
 function handleHelpDialogCancel(event) {
+  event.stopPropagation();
   window.history.back();
   renderHelpDialog();
+}
+
+function handleGoBack(event) {
   event.stopPropagation();
+
+  buttonClick(event.target, () => {
+    if (state.historyLevel == 0) return;
+    window.history.back();
+  })
+}
+
+function renderHistoryButtons() {
+
+  const back = $('.btn-history-back');
+
+   if (state.historyLevel == 0) {
+    back.classList.add('disabled')
+  } else {
+    back.classList.remove('disabled')
+  }
+
 }
 
 function setLevel(level) {
@@ -264,7 +286,9 @@ function replaceHistory() {
 
 function saveHistory() {
   //console.log(state);
+  state.historyLevel++;
   window.history.pushState(state, null, null);
+  renderHistoryButtons();
 }
 
 function loadHistory(event) {
@@ -275,6 +299,7 @@ function loadHistory(event) {
   renderLevel();
   renderWord();
   renderBackground();
+  renderHistoryButtons();
 }
 
 function renderLevel() {

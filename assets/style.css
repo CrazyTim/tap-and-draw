@@ -27,23 +27,33 @@ body {
   border-radius: 7px;
   cursor: pointer;
   pointer-events: all;
-  padding: 7px 15px;
-  transition: background-color 100ms linear;
-  transition: border-color 100ms linear;
+  padding: 1vmin 3vmin 1.7vmin 3vmin;
   transition: color 100ms linear;
+  user-select: none;
+  line-height: 7vmin;
+  font-size: 6vmin;
 }
 
-  .btn, .btn span {
-    user-select: none;
-  }
-
-  .btn-click {
+  .btn.clicked {
     background-color: rgba(0,0,0,0.1);
     border-color: rgba(0,0,0,0.6);
   }
 
-  .sel {
+  .btn.sel {
     border: 2px solid rgba(0,0,0,0.4);
+  }
+
+  .btn.disabled {
+    color: rgba(0,0,0,0.4);
+    border-color: rgba(0,0,0,0.2);
+  }
+
+  .btn.disabled polygon {
+    fill: rgba(0,0,0,0.4);
+  }
+
+  .btn svg {
+    pointer-events: none;
   }
 
 /*-----------------------------------*/
@@ -62,13 +72,12 @@ body {
 /*-----------------------------------*/
 
 .dia-main {
-  grid-template-rows: auto minmax(110px, 25%);
+  grid-template-rows: auto 35vmin;
 }
 
-  .dia-main .btn-wrapper  {
+  .dia-main .wrapper  {
     grid-auto-flow: column;
     display: grid;
-    margin: 0px 60px;
     justify-self: stretch;
     align-self: stretch;
     justify-items: center;
@@ -77,10 +86,11 @@ body {
 
   .btn-word .word-wrapper {
     pointer-events: none;
+    margin-bottom: 7px;
   }
 
   .btn-word .word {
-    font-size: 30pt;
+    font-size: 10vmin;
     word-wrap:break-word;
     overflow-wrap: break-word;
     hyphens: auto;
@@ -90,7 +100,21 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-weight: 300;
-    font-size: 20pt;
+    font-size: 6vmin;
+  }
+
+.btn-history-back {
+  display: grid;
+}
+
+  .btn-history-back svg {
+    width: 7vmin;
+    height: 7vmin;
+  }
+
+  .btn-history-back polygon, {
+    cursor: pointer;
+    fill: rgba(0,0,0,0.4);
   }
 
 /*-----------------------------------*/
