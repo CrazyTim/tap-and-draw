@@ -245,18 +245,18 @@ function getRandomColor () {
 }
 
 function replaceHistory() {
-  console.log(state);
+  //console.log(state);
   window.history.replaceState(state, null, null);
 }
 
 function saveHistory() {
-  console.log(state);
+  //console.log(state);
   window.history.pushState(state, null, null);
 }
 
 function loadHistory(event) {
   state = event.state;
-  console.log(state);
+  //console.log(state);
   renderLevelDialog();
   renderHelpDialog();
   renderLevel();
