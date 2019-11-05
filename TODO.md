@@ -5,4 +5,3 @@
 - More words.
 - Rate the difficulty, submit your own rating on a word to reclassify it if you think its not in the correct level (words would just be reclassified manually by admin).
 - Support for different languages.
-- Swipe left/right to view past words (for phones without a back button).
