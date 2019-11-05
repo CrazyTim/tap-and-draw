@@ -23,6 +23,10 @@ body {
 
 /*-----------------------------------*/
 
+.text {
+  font-size: 6vmin;
+}
+
 .btn {
   border-radius: 7px;
   cursor: pointer;
@@ -118,6 +122,14 @@ body {
   }
 
 /*-----------------------------------*/
+
+.dia-level {
+  grid-template-rows: auto 20vmin 20vmin 20vmin auto;
+}
+
+.dia-help {
+  grid-template-rows: auto auto 20vmin auto;
+}
 
 .fade-out {
   animation-name: fade-out;
