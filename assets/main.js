@@ -23,6 +23,7 @@ async function initalise() {
   LEVELS[1] = await fetchWords('words/1.txt');
   LEVELS[2] = await fetchWords('words/2.txt');
 
+  initaliseServiceWorker();
   setLevel(state.level);
   renderBackground();
   renderWord();
@@ -39,6 +40,18 @@ async function initalise() {
   $('.dia-level').onmousedown = handleLevelDialogCancel;
   $('.dia-help').onmousedown = handleHelpDialogCancel;
 
+}
+
+function initaliseServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+    .then(function(registration) {
+      //console.log('Registered:', registration);
+    })
+    .catch(function(error) {
+      console.log('Registration failed: ', error);
+    });
+  }
 }
 
 function fadeOut(el, callBack) {
