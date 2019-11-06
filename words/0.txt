@@ -110,7 +110,6 @@ Bubble gum
 Drum 
 Helicopter 
 Icecream cone 
-Pizza 
 Sheep 
 snail 
 Umbrella 
@@ -138,7 +137,6 @@ chair
 plane
 flower
 cry
-spider
 bucket
 snowman
 football
@@ -161,7 +159,6 @@ ladder
 necklace
 trumpet
 glasses
-pizza
 shark
 tree
 Angel
@@ -170,7 +167,6 @@ Baby
 Beard
 Bible
 Book
-Bucket
 Bumble bee
 Butterfly
 Cat
@@ -192,7 +188,6 @@ Night
 Nose
 Olympics
 Peanut
-Pizza
 Pumpkin
 Rainbow
 Recycle
@@ -238,7 +233,6 @@ bunny
 square
 bunk bed
 lollipop
-seashell
 mountain
 bowl
 caterpillar
@@ -252,7 +246,6 @@ snail
 bat
 bed
 arm
-whale
 blocks
 sunglasses
 bus
@@ -269,7 +262,6 @@ banana
 kite
 family
 cat
-spider
 tail
 daisy
 mouse
@@ -373,10 +365,8 @@ butterfly
 house
 zebra
 suitcase
-spider web
 lizard
 cloud
-pizza
 crayon
 pie
 neck

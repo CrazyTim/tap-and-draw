@@ -5,11 +5,13 @@ trailer
 bridge
 sweat
 music
+Piñata
 camera
 airport
 soldier
 magnet
 paint
+burrito
 taco
 battery
 piano
@@ -115,7 +117,6 @@ christmas tree
 christmas pudding
 quiet
 petrol
-wig
 picnic
 table tennis
 wedding cake
@@ -141,8 +142,9 @@ Washing line
 Peg 
 Sleeping bag 
 Pram 
-Lamp 
-Toilet paper 
+Lamp
+toilet
+toilet paper 
 Toothpick 
 pick axe
 Stove 
@@ -187,7 +189,6 @@ Celery
 Credit card 
 Car park 
 Sink 
-Sleeping bag 
 Playground 
 Magic wand 
 X-ray 
@@ -206,7 +207,7 @@ Alien
 Fangs 
 Box 
 Dog house 
-Raft 
+raft 
 Cookie 
 Skeleton 
 Beach ball 
@@ -226,7 +227,8 @@ Worm
 Row boat 
 Saturn 
 Mars 
-Bookmark 
+Bookmark
+book
 Castle 
 street light
 Chainsaw 
@@ -239,7 +241,6 @@ Coffee table
 Satellite dish
 Satellite
 Palm tree 
-Seat belt 
 Oar 
 Strong 
 Caravan
@@ -324,7 +325,6 @@ mountain bike
 iceberg
 calculator
 chocolate
-hot air balloon
 skinny
 holding hands
 ice cream
@@ -368,7 +368,6 @@ beach
 rope
 jump
 kiss
-taco
 tank
 jam
 key
@@ -381,7 +380,6 @@ thorn
 captain
 asthma puffer (inhaler)
 torch
-book towel
 Swimming Pool
 Fishing Rod
 Traffic Lights
@@ -399,6 +397,7 @@ Ferris wheel
 Fireworks
 Flag
 High-chair
+chair
 Hockey
 Igloo
 Junk mail
@@ -435,7 +434,6 @@ Sprinkler
 Statue of Liberty
 Stethoscope
 Stork
-Sunburn
 Tadpole
 Teepee
 Thread
@@ -484,18 +482,15 @@ box
 comb
 man
 woman
-
 carpet
 stage fright
 flock
 fireside
 chariot
-palace
 cubicle
 snarl
 police
 win
-cowboy
 trapped
 sponge
 mast
@@ -522,7 +517,6 @@ shack
 download
 videogame
 blush
-zoo
 jazz
 snooze
 exercise
@@ -534,7 +528,6 @@ vanish
 hour
 last
 cello
-pilot
 thief
 sugar
 yak
@@ -546,15 +539,12 @@ plumber
 dead end
 lipstick
 stew
-leather
-tiptoe
 delivery
 cartoon
 toll road
 bleach
 tugboat
 fabric
-raft
 hermit crab
 dripping
 rib
@@ -596,7 +586,6 @@ yolk
 hut
 chess
 shelter
-signal
 homework
 dashboard
 laser
@@ -612,7 +601,6 @@ attack
 injury
 hipster
 binoculars
-cabin
 aunt
 stationery
 Sunscreen
@@ -640,7 +628,6 @@ front
 fresh water
 tourist
 quicksand
-chairman
 gumball
 boa constrictor
 caviar
@@ -658,9 +645,8 @@ company
 bonnet
 grandpa
 jungle
-Pharaoh
-sneeze
-airport security
+pharaoh
+security guard
 hang glider
 postcard
 degree
@@ -669,7 +655,6 @@ jeans
 clown
 frost
 cape
-vitamin
 cloak
 cheerleader
 science
@@ -682,13 +667,11 @@ pocket
 carnival
 print
 dodgeball
-cardboard
 tip
 rodeo
 punk
 hospital
 birthday
-crime
 tin
 lunar rover
 sunrise
@@ -699,13 +682,11 @@ partner
 truck stop
 classroom
 sticky note
-mirror
 drip
 black belt
 somersault
 swamp
 reservoir
-mold
 pail
 Internet
 acrobat
@@ -767,10 +748,8 @@ groom
 gown
 pharmacist
 dent
-foil
 crane
 tide
-dizzy
 stutter
 idea
 coil
@@ -803,7 +782,6 @@ envelope
 bottle
 hunter
 dragon
-doghouse
 dock
 mug
 toe
@@ -837,7 +815,6 @@ seashell
 yo-yo
 gasoline
 elevator
-sleeping bag
 earmuffs
 oven
 third plate
@@ -912,7 +889,6 @@ clown
 well
 beach
 penny
-baby
 loaf
 toothbrush
 beaver
@@ -947,7 +923,6 @@ milk
 cabin
 lunchbox
 pilot
-mold
 hill
 racing car
 turkey
@@ -1041,7 +1016,6 @@ rocket
 elbow
 cougar
 trampoline
-pizza
 garbage truck
 dragonfly
 wax
@@ -1080,6 +1054,7 @@ coyote
 fork
 bacteria
 neighbor
+steering wheel
 lung
 open
 palace
@@ -1124,7 +1099,6 @@ road
 kayak
 brick
 rope
-mirror
 password
 package
 wedge
@@ -1182,7 +1156,6 @@ electricity
 time
 kiss
 aircraft
-sushi
 easel
 waterfall
 melt
@@ -1206,14 +1179,12 @@ pitchfork
 vegetable
 cliff
 highway
-babysitter
 shadow
 wick
 wreck
 pineapple
 iPad
 wrist
-toilet paper
 meteor
 sea turtle
 giant
@@ -1260,7 +1231,7 @@ soccer
 stapler
 fang
 donkey
-hot-air balloon
+hot air balloon
 dump truck
 goldfish
 horn
@@ -1271,6 +1242,7 @@ liquid
 tusk
 organ
 sheep
+goggles
 tuba
 gumball
 butcher
@@ -1330,10 +1302,8 @@ cook
 cheetah
 coin
 locket
-zipper
 hippopotamus
 panda
-gold
 Ferris wheel
 stem
 stick
@@ -1379,7 +1349,6 @@ hairbrush
 alarm clock
 chess
 barn
-jungle
 twig
 jewelry
 laundry basket
@@ -1571,6 +1540,7 @@ summer
 crust
 mother
 Mr Potato Head
+trailor
 robin
 plate
 lemon
@@ -1611,7 +1581,6 @@ waist
 fanny pack
 stomach
 gum
-lighthouse
 field
 list
 volcano
@@ -1630,13 +1599,11 @@ ship
 state
 ferry
 soup
-hail
 pie
 garden
 computer
 vase
 cape
-shampoo
 drill
 bucket
 half
@@ -1644,7 +1611,6 @@ coworker
 sash
 stage
 thaw
-time
 invent
 startup
 story
@@ -1658,7 +1624,6 @@ stuffed animal
 zipper
 spaceship
 nightmare
-salmon
 wallow
 bulldog
 cruise
@@ -1708,7 +1673,6 @@ blizzard
 judge
 sweater
 beanstalk
-picnic
 recess
 ream
 owner
@@ -1726,7 +1690,6 @@ wig
 banister
 optometrist
 blueprint
-knight
 parent
 hydrogen
 drive-through
@@ -1734,7 +1697,6 @@ vein
 hairspray
 post office
 sandpaper
-glitter
 clog
 vet
 toddler
@@ -1757,7 +1719,6 @@ scream
 coastline
 stadium
 speaker
-firefighter
 mine
 wool
 first class
@@ -1775,7 +1736,6 @@ diver
 prey
 servant
 darts
-ping pong
 fortress
 propose
 glue gun
@@ -1803,7 +1763,6 @@ cape
 orbit
 junk
 Jedi
-shampoo
 migrate
 tackle
 vegetarian
@@ -1818,7 +1777,6 @@ nap
 password
 check
 bride
-sunburn
 deliver
 imagine
 chicken coop
