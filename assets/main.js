@@ -1,4 +1,9 @@
 let isWordChanging = false;
+let timer;
+let isTimerVisible = false;
+let timerValue = 0;
+let timerFinishSound;
+
 const LEVELS = [ [],[],[] ];   // array of arrays, each one holding list of words
 const COLOR_SETTINGS = {luminosity: 'light'};
 const $ = document.querySelector.bind(document);
@@ -42,6 +47,12 @@ async function initalise() {
   $('.dia-level').onmousedown = handleLevelDialogCancel;
   $('.dia-help').onmousedown = handleHelpDialogCancel;
   $('.btn-history-back').onmousedown = handleGoBack;
+  $('.btn-timer').onmousedown = handleTimerToggle;
+
+  timerFinishSound = new Howl({
+    src: ['assets/timer-finish-01.ogg']
+  });
+
 }
 
 function initaliseServiceWorker() {
@@ -198,6 +209,8 @@ function handleLevelDialogClose(event) {
     if (state.level != newLevel) {
       setLevel(newLevel);
       state.isLevelVisible = false;
+      isTimerVisible = false;
+      renderTimer();
       replaceHistory();
     } else {
       window.history.back();
@@ -235,6 +248,45 @@ function handleHelpDialogCancel(event) {
   event.stopPropagation();
   window.history.back();
   renderHelpDialog();
+}
+
+function handleTimerToggle(event) {
+  event.stopPropagation();
+
+  buttonClick(event.target, () => {
+    isTimerVisible = !isTimerVisible;
+    timerValue = 60;
+    renderTimer();
+  })
+}
+
+function renderTimer() {
+
+  const el = $('.btn-timer');
+  const label = $('.lbl-timer');
+
+  if (isTimerVisible) {
+
+    label.innerHTML = "60";
+    el.classList.add('on');
+
+    timer = setInterval(() => {
+      if (timerValue > 0) {
+        timerValue--;
+      } else {
+        timerFinishSound.play();
+        clearTimeout(timer);
+        label.classList.add('blink'); // play animation
+      }
+      label.innerHTML = timerValue.toString().padStart(2, '0');
+    }, 1000)
+
+  } else {
+    el.classList.remove('on');
+    label.classList.remove('blink');
+    clearTimeout(timer);
+  }
+
 }
 
 function handleGoBack(event) {

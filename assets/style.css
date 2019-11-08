@@ -28,11 +28,13 @@ body {
 }
 
 .btn {
-  border-radius: 7px;
+  display: grid;
+  border-radius: 2vmin;
   cursor: pointer;
   pointer-events: all;
   padding: 1vmin 3vmin 1.7vmin 3vmin;
-  transition: color 100ms linear;
+  transition: color 100ms linear, 
+              background-color 100ms linear;
   user-select: none;
   line-height: 7vmin;
   font-size: 6vmin;
@@ -58,6 +60,13 @@ body {
 
   .btn svg {
     pointer-events: none;
+    width: 7vmin;
+    height: 7vmin;
+  }
+
+  .btn polygon, {
+    cursor: pointer;
+    fill: rgba(0,0,0,0.4);
   }
 
 /*-----------------------------------*/
@@ -107,22 +116,63 @@ body {
     font-size: 6vmin;
   }
 
-.btn-history-back {
-  display: grid;
+/*-----------------------------------*/
+
+.btn-timer {
+  border-radius: 8vmin;
+  padding: 1vmin 1vmin 1vmin 1vmin;
+  transition: padding 100ms ease-in, 
+              background-color 100ms ease-in,
+              border-radius 100ms ease-in,
+              width 100ms ease-in,
+              height 100ms ease-in;
+  width: 12vmin;
+  height: 12vmin;
 }
 
-  .btn-history-back svg {
-    width: 7vmin;
-    height: 7vmin;
+  .btn-timer svg {
+    display: block;
+    place-self: center;
+    width: 12vmin;
+    height: 12vmin;
   }
 
-  .btn-history-back polygon, {
-    cursor: pointer;
-    fill: rgba(0,0,0,0.4);
+  .btn-timer .lbl-timer {
+    place-self: center;
+    font-family: Rubik;
+    font-size: 9vmin;
+    display: none;
+  }
+
+  .btn-timer .lbl-timer.blink {
+    animation: blink 0.5s linear 5;
+  }
+
+  @keyframes blink {
+    30% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .btn-timer.on {
+    background-color: #fd7d87;
+    width: 17vmin;
+    height: 17vmin;
+    border-radius: 17vmin;
+  }
+
+  .btn-timer.on svg {
+    display: none;
+  }
+
+  .btn-timer.on .lbl-timer {
+    display: block;
   }
 
 /*-----------------------------------*/
-
 .dia-level {
   grid-template-rows: auto 20vmin 20vmin 20vmin auto;
 }
