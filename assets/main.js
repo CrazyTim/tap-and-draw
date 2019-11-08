@@ -178,6 +178,8 @@ function handleSetWord(event) {
       renderWord();
       renderBackground();
       saveHistory();
+      isTimerVisible = false;
+      renderTimer();
 
       fadeIn(wordWrapper, () => {
         isWordChanging = false; // animation finished
@@ -294,6 +296,8 @@ function handleGoBack(event) {
 
   buttonClick(event.target, () => {
     if (state.historyLevel == 0) return;
+    isTimerVisible = false;
+    renderTimer();
     window.history.back();
   })
 }
