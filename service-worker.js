@@ -7,7 +7,7 @@ const URLS_TO_CACHE = [
   'https://fonts.googleapis.com/css?family=Open+Sans:300i,400,400i,700',
   'https://fonts.googleapis.com/css?family=Rubik&display=swap',
   'assets/main.js',
-  'assets/style.css',
+  'assets/main.css',
   'assets/randomColor.js',
   "assets/howler.js",
   'words/0.txt',
