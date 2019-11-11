@@ -8,7 +8,7 @@ A simple web app to help you play pictionary! Like if you're on holiday and forg
 - 3 levels of difficulty:
     - 400 easy words.
     - 1800 medium words.
-    - 300 hard words.
+    - 400 hard words.
 - Words are randomised and don't repeat until all words in the level have been seen.
 - Words with UK/Australian meanings are preferred over American (ie: 'bin' instead of 'trash can', 'icing' instead of 'frosting'). Also words that have different meanings depending on the locale have been avoided.
 

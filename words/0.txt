@@ -1,6 +1,5 @@
 beach
 beach
-cookie
 heart
 drum
 boy
@@ -65,16 +64,17 @@ carrot
 turtle
 dinosaur
 snowman
+snow
 giraffe
 chair
 snail
 baby
-balloon
 football
 robot
 boat
 rainbow
 foot
+road
 computer
 fish
 bee
@@ -111,7 +111,6 @@ Drum
 Helicopter 
 Icecream cone 
 Sheep 
-snail 
 Umbrella 
 Candle 
 Castle 
@@ -138,7 +137,6 @@ plane
 flower
 cry
 bucket
-snowman
 football
 giraffe
 rainbow
@@ -192,7 +190,6 @@ Pumpkin
 Rainbow
 Recycle
 Sand castle
-Snowflake
 Stairs
 Starfish
 Strawberry
@@ -242,7 +239,6 @@ elephant
 duck
 candle
 lion
-snail
 bat
 bed
 arm
@@ -257,7 +253,6 @@ worm
 leg
 rock
 octopus
-balloon
 banana
 kite
 family
@@ -294,7 +289,6 @@ trunk
 chicken
 cupcake
 chimney
-snowman
 bread
 lightbulb
 island
@@ -320,7 +314,6 @@ Mickey Mouse
 monster
 button
 window
-snowflake
 fish
 dragon
 zigzag
@@ -383,6 +376,7 @@ train
 ocean
 lamp
 diamond
+Diamond ring 
 stairs
 pillow
 fairy
