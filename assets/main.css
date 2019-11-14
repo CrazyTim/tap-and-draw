@@ -46,7 +46,7 @@ body {
   }
 
   .btn.sel {
-    border: 2px solid rgba(0,0,0,0.4);
+    border: 0.4vmin solid rgba(0,0,0,0.4);
   }
 
   .btn.disabled {
