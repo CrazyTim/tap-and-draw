@@ -4,7 +4,8 @@ let isTimerVisible = false;
 let timerValue = 0;
 let timerFinishSound;
 
-const LEVELS = [ [],[],[] ];   // array of arrays, each one holding list of words
+const WORDS = []; // shuffled word sets (array of arrays)
+const BACKGROUND_COLORS = []; // random background colors for each word set
 const COLOR_SETTINGS = {luminosity: 'light'};
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -12,12 +13,8 @@ const DURATION_BTN_CLICK = 50;
 const DURATION_DIALOG_TRANSITION = 100;
 
 var state = {
-  isLevelVisible: false,
   isHelpVisible: false,
-  backgroundColor: '#ffccdd',
-  level: 0,
-  words: [],
-  currentWord: -1,
+  currentWord: -1, // index of current word set
   historyLevel: 0, // so we know how far we can go back
 }
 
@@ -25,12 +22,27 @@ window.addEventListener('DOMContentLoaded', initalise);
 
 async function initalise() {
 
-  LEVELS[0] = await fetchWords('words/0.txt');
-  LEVELS[1] = await fetchWords('words/1.txt');
-  LEVELS[2] = await fetchWords('words/2.txt');
+  BACKGROUND_COLORS.push('#ffccdd'); // the first background color is always the same
+
+  const words = [];
+  words[0] = await fetchWords('words/0.txt');
+  words[1] = await fetchWords('words/1.txt');
+  words[2] = await fetchWords('words/2.txt');
+  const maxWords = Math.min(words[0].length, words[1].length, words[2].length);
+
+  for (let i=0; i<maxWords; i++) {
+
+    // pluck a random word from each word list to make a set
+    const set = [];
+    for (let j=0; j<3; j++) {
+      set.push(popRandom(words[j]));
+    }
+
+    WORDS.push(set);
+    BACKGROUND_COLORS.push(getRandomColor());
+  }
 
   initaliseServiceWorker();
-  setLevel(state.level);
   renderBackground();
   renderWord();
   replaceHistory();
@@ -39,12 +51,9 @@ async function initalise() {
 
   // event listeners -----------------------------------------
   window.addEventListener('popstate', loadHistory);
-  $('.btn-show-level').onmousedown = handleLevelDialogOpen;
-  $$('.btn-set-level').forEach(el => el.onmousedown = handleLevelDialogClose);
   $('.btn-show-help').onmousedown = handleHelpDialogOpen;
   $('.btn-hide-help').onmousedown = handleHelpDialogClose;
-  $('.dia-main').onmousedown = handleSetWord;
-  $('.dia-level').onmousedown = handleLevelDialogCancel;
+  $('.dia-main').onmousedown = handleShowNextWord;
   $('.dia-help').onmousedown = handleHelpDialogCancel;
   $('.btn-history-back').onmousedown = handleGoBack;
   $('.btn-timer').onmousedown = handleTimerToggle;
@@ -134,6 +143,7 @@ function popRandom(array) {
   }
 }
 
+// return array of words
 async function fetchWords(url) {
 
   let a = ['err-0','err-1','err-1','err-2','err-3','err-4']; // test data, will be overridden
@@ -155,7 +165,7 @@ async function fetchWords(url) {
 
 }
 
-function handleSetWord(event) {
+function handleShowNextWord(event) {
   event.stopPropagation();
 
   // start animation
@@ -170,11 +180,10 @@ function handleSetWord(event) {
       state.currentWord +=1;
 
       // loop back to the beginning once we reach the end
-      if (state.currentWord > state.words.length - 1) {
+      if (state.currentWord > WORDS.length - 1) {
         state.currentWord = 0;
       }
 
-      state.backgroundColor = getRandomColor();
       renderWord();
       renderBackground();
       saveHistory();
@@ -187,44 +196,6 @@ function handleSetWord(event) {
 
     });
   }
-}
-
-function handleLevelDialogOpen (event) {
-  event.stopPropagation();
-
-  buttonClick(event.target, () => {
-    state.isLevelVisible = true;
-    renderLevelDialog();
-    saveHistory();
-  })
-}
-
-function handleLevelDialogClose(event) {
-  event.stopPropagation();
-
-  $$('.btn-set-level').forEach(el => el.classList.remove('sel'));
-  const el = event.target;
-  el.classList.add('sel');
-  const newLevel = el.getAttribute('data-id');
-
-  buttonClick(el, () => {
-    if (state.level != newLevel) {
-      setLevel(newLevel);
-      state.isLevelVisible = false;
-      isTimerVisible = false;
-      renderTimer();
-      replaceHistory();
-    } else {
-      window.history.back();
-    }
-    renderLevelDialog();
-  })
-}
-
-function handleLevelDialogCancel(event) {
-  event.stopPropagation();
-  window.history.back();
-  renderLevelDialog();
 }
 
 function handleHelpDialogOpen (event) {
@@ -314,23 +285,6 @@ function renderHistoryButtons() {
 
 }
 
-function setLevel(level) {
-
-  state.level = parseInt(level);
-  state.currentWord = -1;
-  state.words = [];
-
-  // shuffle words
-  const words = LEVELS[state.level].slice(); // clone
-  while (words.length > 0) {
-    state.words.push(popRandom(words));
-  }
-
-  renderWord();
-  renderLevel();
-
-}
-
 function getRandomColor () {
   return randomColor(COLOR_SETTINGS);
 }
@@ -341,50 +295,19 @@ function replaceHistory() {
 }
 
 function saveHistory() {
-  //console.log(state);
   state.historyLevel++;
   window.history.pushState(state, null, null);
+  console.log(state);
   renderHistoryButtons();
 }
 
 function loadHistory(event) {
   state = event.state;
-  //console.log(state);
-  renderLevelDialog();
+  console.log(state);
   renderHelpDialog();
-  renderLevel();
   renderWord();
   renderBackground();
   renderHistoryButtons();
-}
-
-function renderLevel() {
-  const el = $('.btn-show-level');
-  if (state.level === 0) {
-    el.innerHTML = 'easy';
-  } else if (state.level === 1) {
-    el.innerHTML = 'medium';
-  } else if (state.level === 2) {
-    el.innerHTML = 'hard';
-  }
-  $$('.btn-set-level').forEach(el => el.classList.remove('set'));
-  $(`.btn-set-level[data-id='${state.level}']`).classList.add('set');
-}
-
-function renderLevelDialog() {
-
-  const diaMain = $('.dia-main');
-  const diaLevel = $('.dia-level');
-
-  if (state.isLevelVisible) {
-    fadeOut(diaMain, () => {
-      fadeIn(diaLevel);
-    })
-  } else {
-    fadeOut(diaLevel, () => {
-      fadeIn(diaMain);
-    })
-  }
 }
 
 function renderHelpDialog() {
@@ -404,13 +327,13 @@ function renderHelpDialog() {
 }
 
 function renderBackground() {
-  document.body.style.backgroundColor = state.backgroundColor;
+  document.body.style.backgroundColor = BACKGROUND_COLORS[state.currentWord + 1];
 }
 
 function renderWord() {
   const el = $('.word-wrapper');
   if (state.currentWord !== -1) {
-    el.innerHTML = state.words[state.currentWord];
+    el.innerHTML = WORDS[state.currentWord];
     el.classList.add('word');
     el.classList.remove('intro');
   } else {

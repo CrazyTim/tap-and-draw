@@ -173,9 +173,6 @@ body {
   }
 
 /*-----------------------------------*/
-.dia-level {
-  grid-template-rows: auto 20vmin 20vmin 20vmin auto;
-}
 
 .dia-help {
   grid-template-rows: auto auto 20vmin auto;
