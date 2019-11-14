@@ -168,33 +168,21 @@ async function fetchWords(url) {
 function handleShowNextWord(event) {
   event.stopPropagation();
 
-  // start animation
-  if (!isWordChanging) {
+  if (!isWordChanging) { // don't interrupt if we are still changing
 
     isWordChanging = true;
 
-    const wordWrapper = $('.word-wrapper')
-    
-    fadeOut(wordWrapper, () => {
+    state.currentWord +=1;
 
-      state.currentWord +=1;
+    // loop back to the beginning once we reach the end
+    if (state.currentWord > WORDS.length - 1) {
+      state.currentWord = 0;
+    }
 
-      // loop back to the beginning once we reach the end
-      if (state.currentWord > WORDS.length - 1) {
-        state.currentWord = 0;
-      }
+    renderWord();
 
-      renderWord();
-      renderBackground();
-      saveHistory();
-      isTimerVisible = false;
-      renderTimer();
+    saveHistory();
 
-      fadeIn(wordWrapper, () => {
-        isWordChanging = false; // animation finished
-      });
-
-    });
   }
 }
 
@@ -330,15 +318,38 @@ function renderBackground() {
   document.body.style.backgroundColor = BACKGROUND_COLORS[state.currentWord + 1];
 }
 
+// display the words from the current set
 function renderWord() {
-  const el = $('.word-wrapper');
-  if (state.currentWord !== -1) {
-    el.innerHTML = WORDS[state.currentWord];
-    el.classList.add('word');
-    el.classList.remove('intro');
+
+  const card = $('.card');
+  const intro = $('.intro');
+
+  if (state.currentWord === -1) {
+    card.classList.add('hide');
+    intro.classList.remove('hide');
+
   } else {
-    el.innerHTML = 'Tap to see<br>a new word';
-    el.classList.remove('word');
-    el.classList.add('intro');
+
+    intro.classList.add('hide');
+    
+    // todo: animate card flip
+
+      // display words
+      if (state.currentWord !== -1) {
+        for (let i=0; i<3; i++) {
+           $(`.word-wrapper[data-id='${i}'] .word`).innerHTML = WORDS[state.currentWord][i];
+        }
+      }
+      
+      renderBackground();
+      isTimerVisible = false;
+      renderTimer();
+
+    
+    isWordChanging = false; // animation finished
+
+    card.classList.remove('hide');
+    
   }
+
 }

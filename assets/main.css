@@ -97,19 +97,16 @@ body {
     align-items: center;
   }
 
-  .btn-word .word-wrapper {
-    pointer-events: none;
-    margin-bottom: 7px;
-  }
-
-  .btn-word .word {
+  .word-wrapper .word {
     font-size: 10vmin;
     word-wrap:break-word;
     overflow-wrap: break-word;
     hyphens: auto;
+    pointer-events: none;
+    margin-bottom: 7px;
   }
 
-  .btn-word .intro {
+  .intro {
     font-family: 'Open Sans', sans-serif;
     font-style: italic;
     font-weight: 300;
