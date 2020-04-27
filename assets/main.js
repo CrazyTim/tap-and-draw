@@ -137,7 +137,7 @@ function popRandom(array) {
 async function fetchWords(url) {
 
   let a = ['err-0','err-1','err-1','err-2','err-3','err-4']; // test data, will be overridden
-  
+
   try {
 
     const response = await fetch(url)
@@ -164,7 +164,7 @@ function handleSetWord(event) {
     isWordChanging = true;
 
     const wordWrapper = $('.word-wrapper')
-    
+
     fadeOut(wordWrapper, () => {
 
       state.currentWord +=1;

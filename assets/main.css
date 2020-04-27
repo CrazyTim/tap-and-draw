@@ -17,7 +17,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   -webkit-tap-highlight-color: transparent;
-  transition: background-color 800ms linear;  
+  transition: background-color 800ms linear;
   user-select: none;
 }
 
@@ -33,7 +33,7 @@ body {
   cursor: pointer;
   pointer-events: all;
   padding: 1vmin 3vmin 1.7vmin 3vmin;
-  transition: color 100ms linear, 
+  transition: color 100ms linear,
               background-color 100ms linear;
   user-select: none;
   line-height: 7vmin;
@@ -121,7 +121,7 @@ body {
 .btn-timer {
   border-radius: 8vmin;
   padding: 1vmin 1vmin 1vmin 1vmin;
-  transition: padding 100ms ease-in, 
+  transition: padding 100ms ease-in,
               background-color 100ms ease-in,
               border-radius 100ms ease-in,
               width 100ms ease-in,
