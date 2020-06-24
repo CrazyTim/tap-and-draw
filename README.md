@@ -5,10 +5,18 @@
 
 # Tap And Draw
 
-A simple web app to help you play pictionary! Like if you're on holiday and forgot to bring pictionary with you :).
+A simple pictionary-type game! Pens and paper still required.
+
+## Motivation
+
+I love classic Pictionary! Thinking how to draw something and watching others stretch their imagination is very entertaining, especially when others interpret what you have drawn in a way you didn't expect!
+
+I wanted to design a very simple intuitive interface, as well as choose and research the list of words. The words should be spontaneous, absolutely relatable, and interesting to draw, and then there wouldn't be a need to lug a board game box around.
+
+Also I think the traditional hour glass that comes in the box is annoying - I mean how do you reset it half-way through? A timer in an app would be much easier.
 
 ## Features
-- Simple, colourful design.
+- Simple, colourful interface.
 - Words are currently in English, and hopefully interesting to draw. 
 - 3 levels of difficulty:
     - 400 easy words.
@@ -21,4 +29,4 @@ A simple web app to help you play pictionary! Like if you're on holiday and forg
 - Designed to be used on a mobile phone, so it has a very simple interface.
 - Uses the browser history API for navigation; press the (android) back button to see previous words, or exit out of dialogues.
 - Words are stored in plain text files and fetched when the app loads. Any duplicate or blank words are removed.
-- Animations implemented in vanilla js (no jQuery).
+- Animations are implemented in vanilla js.
