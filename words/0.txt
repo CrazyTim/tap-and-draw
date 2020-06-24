@@ -5,7 +5,6 @@ drum
 boy
 skateboard
 cow
-sock
 spider web
 egg
 water
@@ -93,29 +92,29 @@ lollipop
 butterfly
 hair
 blanket
-Pillow 
-Scissors 
-Boat 
-Kite 
-Flag 
+Pillow
+Scissors
+Boat
+Kite
+Flag
 Love
-Spots 
+Spots
 Unicorn
-Clock 
-Fire truck 
-Clock 
-Radio 
-Broom 
-Bubble gum 
-Drum 
-Helicopter 
-Icecream cone 
-Sheep 
-Umbrella 
-Candle 
-Castle 
-Grass 
-Tent 
+Clock
+Fire truck
+Clock
+Radio
+Broom
+Bubble gum
+Drum
+Helicopter
+Icecream cone
+Sheep
+Umbrella
+Candle
+Castle
+Grass
+Tent
 lion
 shoe
 duck
@@ -124,7 +123,6 @@ flag
 boat
 book
 rain
-sock
 beard
 alien
 robot
@@ -132,7 +130,7 @@ scarf
 sheep
 apple
 snake
-chair 
+chair
 plane
 flower
 cry
@@ -321,7 +319,6 @@ leaf
 horse
 egg
 coin
-turtle
 corn
 starfish
 giraffe
@@ -376,7 +373,7 @@ train
 ocean
 lamp
 diamond
-Diamond ring 
+Diamond ring
 stairs
 pillow
 fairy

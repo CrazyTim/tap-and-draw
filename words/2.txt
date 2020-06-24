@@ -74,97 +74,97 @@ salmon
 Foot massage
 decorations
 Wingman
-Bible 
-Pass-the-parcel 
-Costume 
-Budget 
-Door-to-door salesperson 
-Petri dish 
-Ceiling 
-Herbs 
+Bible
+Pass-the-parcel
+Costume
+Budget
+Door-to-door salesperson
+Petri dish
+Ceiling
+Herbs
 Radio station
 bully
-Scented candle 
+Scented candle
 Board game
 boss
-Fruit smoothie 
-Morta and pestle 
-Engine 
+Fruit smoothie
+Morta and pestle
+Engine
 Orchestra
 Weave
 plastic
 Frozen
 Pokemon
 ignite
-Mash potato 
-Cave man 
-Spreadsheet 
-Email 
-Filing cabinet 
-Spilt milk 
-Circus 
-Saw dust 
-Fertiliser 
-Mute 
-Shopping bag 
-Baggage 
-Spare change 
-Parking meter 
+Mash potato
+Cave man
+Spreadsheet
+Email
+Filing cabinet
+Spilt milk
+Circus
+Saw dust
+Fertiliser
+Mute
+Shopping bag
+Baggage
+Spare change
+Parking meter
 Exit
 Licorice
 endangered species
 law
-Second-hand clothing 
-Unbalanced 
-Detour 
-Triathlon 
-Daydreaming 
-Dusk 
-Solar panel 
-Bamboo 
-Polar bear 
-Shipping container 
-Giant 
-Roadkill 
-Four wheel drive 
-Protect 
-Pretty 
-Jetty 
-Drop 
-Saliva 
-Marching 
-Funeral 
-entrée 
-Heated swimming pool 
-City 
-Noodle box 
-Clean 
-Humpback whale 
-Fertiliser 
-Bar fridge 
-Sand 
-Windy 
-Upside down 
-Steak knife 
-Bait 
-Underground tunnel 
-Magazine 
+Second-hand clothing
+Unbalanced
+Detour
+Triathlon
+Daydreaming
+Dusk
+Solar panel
+Bamboo
+Polar bear
+Shipping container
+Giant
+Roadkill
+Four wheel drive
+Protect
+Pretty
+Jetty
+Drop
+Saliva
+Marching
+Funeral
+entrée
+Heated swimming pool
+City
+Noodle box
+Clean
+Humpback whale
+Fertiliser
+Bar fridge
+Sand
+Windy
+Upside down
+Steak knife
+Bait
+Underground tunnel
+Magazine
 Grow
 crime
-Archery 
-Tritan 
-Website 
-Credit card 
+Archery
+Tritan
+Website
+Credit card
 Satellite
 pore
-Remote control 
-Pumpkin soup 
-Asthma 
-Chicken pox 
-Radio station 
+Remote control
+Pumpkin soup
+Asthma
+Chicken pox
+Radio station
 explode
-Balance 
-Oxygen 
+Balance
+Oxygen
 Weather forecast
 cold
 burn
@@ -394,3 +394,6 @@ rhythm
 spare
 chemical
 interception
+vanish
+timezone
+spinach
