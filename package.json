@@ -1,0 +1,17 @@
+{
+  "name": "tap-and-draw",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "reload -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrazyTim/tap-and-draw.git"
+  },
+  "author": "CrazyTim",
+  "license": "MIT",
+  "homepage": "https://github.com/CrazyTim/tap-and-draw#readme",
+  "devDependencies": {
+    "reload": "^3.1.1"
+  }
+}
