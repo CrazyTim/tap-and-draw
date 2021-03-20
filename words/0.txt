@@ -85,26 +85,26 @@ chocolate
 lollipop
 butterfly
 hair
-Scissors
-Boat
-Flag
-Love
-Spots
-Unicorn
-Clock
-Fire truck
-Clock
-Radio
-Broom
-Bubble gum
-Drum
-Helicopter
+scissors
+boat
+flag
+love
+spots
+unicorn
+clock
+fire truck
+clock
+radio
+broom
+bubble gum
+drum
+helicopter
 ice cream
-Sheep
-Umbrella
-Candle
+sheep
+umbrella
+candle
 castle
-Grass
+grass
 lion
 shoe
 duck
@@ -140,34 +140,34 @@ necklace
 trumpet
 shark
 tree
-Angel
-Angry
-Baby
-Beard
-Bible
-Book
-Cat
-Crayon
-Dolphin
-Egg
-Eye
-Flower
-Flying saucer
-Giraffe
-High heels
-Lady bug
-Lamp
-Lion
-Mailbox
-Night
-Stairs
-Starfish
-Strawberry
-Tire
-Toast
-Toothbrush
-Toothpaste
-Truck
+angel
+angry
+baby
+beard
+bible
+book
+cat
+crayon
+dolphin
+egg
+eye
+flower
+flying saucer
+giraffe
+high heels
+lady bug
+lamp
+lion
+mailbox
+night
+stairs
+starfish
+strawberry
+tire
+toast
+toothbrush
+toothpaste
+truck
 cookie
 robot
 eye
@@ -263,7 +263,7 @@ socks
 flower
 spoon
 bell
-Mickey Mouse
+mickey mouse
 monster
 button
 window
@@ -279,7 +279,7 @@ giraffe
 hand
 broom
 ear
-Earth
+earth
 bear
 rain
 monkey
@@ -320,7 +320,7 @@ train
 ocean
 lamp
 diamond
-Diamond ring
+diamond ring
 stairs
 pillow
 fairy

@@ -77,102 +77,102 @@ hide
 lecture
 listen
 salmon
-Foot massage
+foot massage
 decorations
-Wingman
-Bible
-Pass-the-parcel
-Costume
-Budget
-Door-to-door salesperson
-Petri dish
-Ceiling
-Herbs
-Radio station
+wingman
+bible
+pass-the-parcel
+costume
+budget
+door-to-door salesperson
+petri dish
+ceiling
+herbs
+radio station
 bully
-Scented candle
-Board game
+scented candle
+board game
 boss
-Fruit smoothie
-Morta and pestle
-Engine
-Orchestra
-Weave
+fruit smoothie
+morta and pestle
+engine
+orchestra
+weave
 plastic
-Frozen
-Pokemon
+frozen
+pokemon
 ignite
-Mash potato
-Cave man
-Spreadsheet
-Email
-Filing cabinet
-Spilt milk
-Circus
-Saw dust
-Fertiliser
-Mute
-Shopping bag
-Baggage
-Spare change
-Parking meter
-Exit
-Licorice
+mash potato
+cave man
+spreadsheet
+email
+filing cabinet
+spilt milk
+circus
+saw dust
+fertiliser
+mute
+shopping bag
+baggage
+spare change
+parking meter
+exit
+licorice
 endangered species
 law
-Second-hand clothing
-Unbalanced
-Detour
-Triathlon
-Daydreaming
-Dusk
-Solar panel
-Bamboo
-Polar bear
-Shipping container
-Giant
-Roadkill
-Four wheel drive
-Protect
-Pretty
-Jetty
-Drop
-Saliva
-Marching
-Funeral
+second-hand clothing
+unbalanced
+detour
+triathlon
+daydreaming
+dusk
+solar panel
+bamboo
+polar bear
+shipping container
+giant
+roadkill
+four wheel drive
+protect
+pretty
+jetty
+drop
+saliva
+marching
+funeral
 entrée
-Heated swimming pool
-City
-Noodle box
-Clean
-Humpback whale
-Fertiliser
-Bar fridge
-Sand
-Windy
-Upside down
-Steak knife
-Bait
+heated swimming pool
+city
+noodle box
+clean
+humpback whale
+fertiliser
+bar fridge
+sand
+windy
+upside down
+steak knife
+bait
 water buffalo
 front
 deep
 mirage
-Magazine
-Grow
+magazine
+grow
 crime
 hinge
-Website
-Credit card
-Satellite
+website
+credit card
+satellite
 pore
-Remote control
-Pumpkin soup
-Asthma
-Chicken pox
-Radio station
-Balance
-Oxygen
-Weather forecast
+remote control
+pumpkin soup
+asthma
+chicken pox
+radio station
+balance
+oxygen
+weather forecast
 cold
 burn
 push
@@ -222,20 +222,20 @@ mascot
 customer
 mayor
 receipt
-Facebook
-Flat
-Frame
-Full moon
-Game
-Hotel
-Paper plate
-Photo
+facebook
+flat
+frame
+full moon
+game
+hotel
+paper plate
+photo
 war
 rock band
-Skip
+skip
 foil
-Solar eclipse
-Tourist
+solar eclipse
+tourist
 plait
 flash
 university
@@ -263,7 +263,7 @@ ray
 kilogram
 armada
 sickle
-P.O. box
+p.o. box
 landfill
 welder
 water vapor
@@ -298,7 +298,7 @@ brainstorm
 wish
 far
 bed and breakfast
-Atlantis
+atlantis
 time zone
 pastry
 joke

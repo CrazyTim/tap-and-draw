@@ -101,7 +101,7 @@ tire
 ladder
 strawberryy
 shadow
-Archery
+archery
 gate
 fence
 fish tank
@@ -132,112 +132,112 @@ igloo
 light bulb
 fairy
 nappy
-Fan
-Haircut
-Go carts
-Wardrobe
-Frying pan
-Washing line
-Peg
-Sleeping bag
-Pram
-Lamp
+fan
+haircut
+go carts
+wardrobe
+frying pan
+washing line
+peg
+sleeping bag
+pram
+lamp
 toilet
 toilet paper
-Toothpick
+toothpick
 pick axe
-Stove
-Oven
-Kitchen sink
-Crane
-Cement
-Spanner
-Television
-Escalator
-Elevator
-Hike
-Lizard
-Radiation
-Drill
-Boxing glove
-Roof
-Rolling pin
-Paintbrush
-Dice
-Measuring tape
-Pencil sharpener
-Bbq
-Watering can
-Kettle
-Toaster
-Traffic light
-Hike
-Police
-Lava
-Sail
-Saturn
-Mars
-Parcel
-Garage
-Sticky tape
-Calculator
-Burger
+stove
+oven
+kitchen sink
+crane
+cement
+spanner
+television
+escalator
+elevator
+hike
+lizard
+radiation
+drill
+boxing glove
+roof
+rolling pin
+paintbrush
+dice
+measuring tape
+pencil sharpener
+bbq
+watering can
+kettle
+toaster
+traffic light
+hike
+police
+lava
+sail
+saturn
+mars
+parcel
+garage
+sticky tape
+calculator
+burger
 ghost
-Credit card
-Car park
-Sink
-Playground
-Magic wand
-X-ray
-Snoring
-Igloo
-Tractor
-Airbag
-Car jack
-Sing
-Sheild
-Swim
-Black cat
-Cauldron
-Solar system
-Alien
-Fangs
-Box
-Dog house
+credit card
+car park
+sink
+playground
+magic wand
+x-ray
+snoring
+igloo
+tractor
+airbag
+car jack
+sing
+sheild
+swim
+black cat
+cauldron
+solar system
+alien
+fangs
+box
+dog house
 raft
-Skeleton
-Beach ball
-Button
-Palm tree
-Pencil case
-Water tank
-Shovel
-Scissors
-Tornado
-Mountain
-River
-Sunglasses
-Jellyfish
-Worm
-Row boat
-Saturn
-Mars
-Bookmark
+skeleton
+beach ball
+button
+palm tree
+pencil case
+water tank
+shovel
+scissors
+tornado
+mountain
+river
+sunglasses
+jellyfish
+worm
+row boat
+saturn
+mars
+bookmark
 book
 street light
-Chainsaw
-Quicksand
-Cave
-Table tennis
-Traffic
-Needle
+chainsaw
+quicksand
+cave
+table tennis
+traffic
+needle
 hot chocolate
-Coffee table
-Satellite dish
-Satellite
-Oar
-Strong
-Caravan
+coffee table
+satellite dish
+satellite
+oar
+strong
+caravan
 hang
 baby
 soup
@@ -370,62 +370,62 @@ axe
 thorn
 captain
 asthma puffer (inhaler)
-Swimming Pool
-Fishing Rod
+swimming pool
+fishing rod
 chain
-Church
-Circus tent
-Computer
-Dance
-Deodorant
-Dumbbell
-Eel
-Eiffel Tower
-Ferris wheel
-Fireworks
-Flag
-High-chair
+church
+circus tent
+computer
+dance
+deodorant
+dumbbell
+eel
+eiffel tower
+ferris wheel
+fireworks
+flag
+high-chair
 chair
-Hockey
-Igloo
-Junk mail
+hockey
+igloo
+junk mail
 thermometer
-Kiss
-Kitten
-Kiwi
-Koala
-Light
-Lobster
-Magnet
-Mechanic
-Megaphone
-North pole
-Nurse
-Owl
-Piano
-Pigtails
-Pirate
-Playground
-Pumpkin pie
+kiss
+kitten
+kiwi
+koala
+light
+lobster
+magnet
+mechanic
+megaphone
+north pole
+nurse
+owl
+piano
+pigtails
+pirate
+playground
+pumpkin pie
 pumpkin soup
-Raindrop
-Robot
-Scrambled eggs
-Seat belt
-Slipper
-Snowball
-Statue of Liberty
-Stethoscope
-Stork
-Tadpole
-Teepee
-Thread
-Train
-Tricycle
-Tutu
-United States
-WIFI
-Zombie
+raindrop
+robot
+scrambled eggs
+seat belt
+slipper
+snowball
+statue of liberty
+stethoscope
+stork
+tadpole
+teepee
+thread
+train
+tricycle
+tutu
+united states
+wifi
+zombie
 collar
 jumper
 tag
@@ -478,7 +478,7 @@ mast
 flu
 gas station
 tow
-CD
+cd
 captain
 gold
 lace
@@ -585,7 +585,7 @@ hipster
 binoculars
 aunt
 stationery
-Sunscreen
+sunscreen
 molar
 swoop
 cushion
@@ -667,7 +667,7 @@ somersault
 swamp
 reservoir
 pail
-Internet
+internet
 acrobat
 braid
 trail
@@ -794,10 +794,10 @@ earmuffs
 oven
 third plate
 light bulb
-Olympics
-Peanut
-Pumpkin
-Recycle
+olympics
+peanut
+pumpkin
+recycle
 pickle
 salt and pepper
 weight
@@ -850,7 +850,7 @@ razor
 scientist
 helium
 windshield
-America
+america
 playground
 timer
 bomb
@@ -923,7 +923,7 @@ worm
 kettle
 shape
 mushroom
-DVD
+dvd
 detective
 smelly socks
 ribbon
@@ -971,7 +971,7 @@ goat
 boot
 saw
 tie
-TV
+tv
 squeeze
 doctor
 forest
@@ -1147,7 +1147,7 @@ highway
 shadow
 wick
 wreck
-iPad
+ipad
 wrist
 meteor
 sea turtle
@@ -1268,7 +1268,7 @@ coin
 locket
 hippopotamus
 panda
-Ferris wheel
+ferris wheel
 stem
 stick
 aquarium
@@ -1453,7 +1453,7 @@ video camera
 baker
 taxi
 curtain
-Minion
+minion
 stamp
 pail
 cucumber
@@ -1485,7 +1485,7 @@ orphan
 whisk
 goblin
 childbirth
-Jupiter
+jupiter
 gap
 astronaut
 class
@@ -1496,7 +1496,7 @@ straw
 harmonica
 summer
 mother
-Mr Potato Head
+mr potato head
 trailor
 robin
 plate
@@ -1713,7 +1713,7 @@ sheep dog
 sap
 orbit
 junk
-Jedi
+jedi
 migrate
 tackle
 vegetarian
