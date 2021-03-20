@@ -1,3 +1,4 @@
+clothesline
 pearl
 bus stop
 pram
@@ -5,15 +6,18 @@ trailer
 bridge
 sweat
 music
-Piñata
+piñata
 camera
+laptop
+saucepan
+nose hairs
 airport
 soldier
 magnet
 paint
 burrito
+vacuum cleaner
 taco
-battery
 piano
 guitar
 violin
@@ -24,7 +28,6 @@ river
 maze
 lid
 chapel
-tresure
 lego
 lightsaber
 peacock
@@ -38,7 +41,7 @@ tomato sauce
 money
 net
 park
-torch
+lantern
 brain
 hammock
 peanut butter
@@ -98,7 +101,7 @@ tire
 ladder
 strawberryy
 shadow
-hinge
+Archery
 gate
 fence
 fish tank
@@ -131,12 +134,9 @@ fairy
 nappy
 Fan
 Haircut
-Doctor
-
 Go carts
 Wardrobe
 Frying pan
-Pocket
 Washing line
 Peg
 Sleeping bag
@@ -180,10 +180,9 @@ Mars
 Parcel
 Garage
 Sticky tape
-Music
 Calculator
 Burger
-Celery
+ghost
 Credit card
 Car park
 Sink
@@ -214,11 +213,10 @@ Pencil case
 Water tank
 Shovel
 Scissors
-Treasure chest
 Tornado
 Mountain
 River
-Sun glasses
+Sunglasses
 Jellyfish
 Worm
 Row boat
@@ -226,7 +224,6 @@ Saturn
 Mars
 Bookmark
 book
-Castle
 street light
 Chainsaw
 Quicksand
@@ -238,7 +235,6 @@ hot chocolate
 Coffee table
 Satellite dish
 Satellite
-Palm tree
 Oar
 Strong
 Caravan
@@ -247,7 +243,6 @@ baby
 soup
 lake
 farm
-tent
 rice
 milk
 rose
@@ -301,14 +296,13 @@ family
 pirate
 archer
 lizard
-hotdog
+hot dog
 prison
 frisbee
 jellyfish
-campfire
 garbage
 toaster
-battery
+bathroom
 sunrise
 autumn
 compass
@@ -324,10 +318,9 @@ calculator
 space shuttle
 skinny
 holding hands
-ice cream
+ice cream cone
 volcano
 tornado
-bee hive
 space
 propeller
 iced tea
@@ -377,17 +370,14 @@ axe
 thorn
 captain
 asthma puffer (inhaler)
-torch
 Swimming Pool
 Fishing Rod
-Traffic Lights
 chain
 Church
 Circus tent
 Computer
 Dance
 Deodorant
-Dragon
 Dumbbell
 Eel
 Eiffel Tower
@@ -405,13 +395,10 @@ Kitten
 Kiwi
 Koala
 Light
-Lipstick
 Lobster
-Lollipop
 Magnet
 Mechanic
 Megaphone
-Music
 North pole
 Nurse
 Owl
@@ -452,7 +439,7 @@ hamburger
 bumblebee
 boy
 kitten
-rocket
+rocketship
 camera
 jacket
 purse
@@ -467,7 +454,6 @@ jail
 branch
 basketball
 dream
-music
 alive
 dead
 cube
@@ -481,7 +467,6 @@ woman
 carpet
 stage fright
 flock
-fireside
 chariot
 cubicle
 snarl
@@ -620,16 +605,13 @@ mat
 dream
 quit
 fiddle
-handle
-front
-fresh water
 tourist
 quicksand
 gumball
 boa constrictor
 caviar
 crust
-fiance
+fiancé
 yard
 stow
 ruby
@@ -647,7 +629,7 @@ security guard
 hang glider
 postcard
 degree
-neighborhood
+neighbourhood
 jeans
 clown
 frost
@@ -719,7 +701,6 @@ pawn
 saddle
 wooly mammoth
 sandbox
-cream
 volleyball
 runt
 prize
@@ -759,7 +740,6 @@ script
 country
 tow truck
 pain
-haircut
 conveyor belt
 crow's nest
 log-in
@@ -777,7 +757,6 @@ pizza sauce
 envelope
 bottle
 hunter
-dragon
 dock
 mug
 toe
@@ -785,11 +764,11 @@ plank
 photograph
 string
 seahorse
-scar
 sky
 rowboat
 growl
 pillowcase
+pillow fight
 constellation
 wave
 chimney
@@ -815,10 +794,12 @@ earmuffs
 oven
 third plate
 light bulb
-outside
+Olympics
+Peanut
+Pumpkin
+Recycle
 pickle
 salt and pepper
-hair dryer
 weight
 pond
 skateboard
@@ -865,7 +846,6 @@ extension cord
 bagel
 apologize
 table
-deep
 razor
 scientist
 helium
@@ -912,8 +892,8 @@ girlfriend
 desk
 frame
 notepad
+windscreen wipers
 garage
-lip
 milk
 cabin
 lunchbox
@@ -926,9 +906,9 @@ knee
 ink
 coal
 bowtie
+bow
 lamp
 plant
-colored pencil
 stump
 song
 cobra
@@ -939,27 +919,25 @@ blackbeard
 bagpipe
 powder
 hotel
-hair
 worm
 kettle
 shape
 mushroom
 DVD
 detective
+smelly socks
 ribbon
 wreath
 piano
 french fries
-pocket
 flagpole
 mailbox
 frying pan
 sand
 whistle
 rainbow
-door
+doorstop
 graph
-torch
 happy
 grill
 hospital
@@ -1003,13 +981,10 @@ sign
 saltwater
 gate
 elephant
-watering can
 pet
 heel
 pendulum
-lifejacket
-rocket
-elbow
+life jacket
 cougar
 trampoline
 garbage truck
@@ -1019,7 +994,7 @@ calendar
 spider web
 mop
 ocean
-coat
+coat hanger
 potato
 half
 sandal
@@ -1041,20 +1016,18 @@ nurse
 nut
 river
 glass
-campfire
 juice
 spaceship
 top hat
 coyote
 fork
 bacteria
-neighbor
+neighbour
 steering wheel
 lung
 open
 palace
 roller blading
-eclipse
 salt
 saddle
 trash can
@@ -1067,6 +1040,7 @@ hourglass
 college
 marshmallow
 drawer
+drawbridge
 cake
 log
 ladder
@@ -1106,10 +1080,9 @@ shower
 aunt
 television
 brain
-rock
+rock climbing
 sleeve
 guitar
-tent
 crow
 flashlight
 neck
@@ -1135,6 +1108,7 @@ hip
 fur
 sunset
 chocolate chip cookie
+chocolate fountain
 camera
 chameleon
 draw
@@ -1173,7 +1147,6 @@ highway
 shadow
 wick
 wreck
-pineapple
 iPad
 wrist
 meteor
@@ -1198,14 +1171,13 @@ dominoes
 tape
 magic carpet
 door handle
-paint
+painting
 pea
 needle
 scarecrow
 railroad
 toaster
 scale
-lightsaber
 hole
 scarf
 birthday cake
@@ -1256,7 +1228,8 @@ bicycle
 smoke
 rug
 water pistol
-castle
+sand castle
+jumping castle
 sack
 sprinkler
 wood
@@ -1267,8 +1240,8 @@ brush
 grape juice
 drone
 apple pie
-paper clips
 bell pepper
+apple tree
 page
 cash
 tongue
@@ -1277,7 +1250,6 @@ bathroom scale
 children
 lock
 spoon
-lipstick
 tricycle
 pelican
 attic
@@ -1313,7 +1285,6 @@ lap
 gift
 anvil
 sunflower
-solar system
 electrical outlet
 dolphin
 homeless
@@ -1330,7 +1301,6 @@ park
 trophy
 backbone
 rat
-sunglasses
 teeth
 shipwreck
 floor
@@ -1366,7 +1336,6 @@ cemetery
 birthday
 zookeeper
 zoo
-kite
 middle
 party
 knight
@@ -1376,7 +1345,6 @@ banana peel
 city
 shelf
 cricket
-music
 sidekick
 scaffolding
 toy
@@ -1472,14 +1440,13 @@ tadpole
 lucky
 eye patch
 golf
-Nail Polish
-battery
+nail polish
 hummingbird
 collar
 positive
 spot
 shade
-slide
+slippery dip
 hot dog
 strap
 video camera
@@ -1492,7 +1459,6 @@ pail
 cucumber
 celery
 toast
-thermometer
 run
 peck
 tail
@@ -1502,7 +1468,7 @@ sunburn
 pantry
 shake
 firefighter
-sailboat
+sailing boat
 fin
 north
 school bus
@@ -1529,7 +1495,6 @@ mud
 straw
 harmonica
 summer
-crust
 mother
 Mr Potato Head
 trailor
@@ -1545,7 +1510,6 @@ meat
 piranha
 t-shirt
 breakfast
-carpet
 doormat
 box
 pumpkin
@@ -1556,7 +1520,6 @@ yardstick
 trapeze
 skirt
 dirt
-treasure
 safe
 fax
 money
@@ -1595,7 +1558,6 @@ pie
 garden
 computer
 vase
-cape
 drill
 bucket
 half
@@ -1668,11 +1630,9 @@ recess
 ream
 owner
 atlas
-water buffalo
 dew
 lullaby
 date
-musician
 turtleneck
 bobsled
 school
@@ -1699,8 +1659,9 @@ hail
 edge
 bruise
 clamp
+tunnel
 art gallery
-fireman pole
+fireman's pole
 vehicle
 goblin
 barber
@@ -1720,7 +1681,7 @@ poison
 husband
 macho
 applause
-pickup truck
+ute
 engaged
 houseboat
 diver
@@ -1740,7 +1701,7 @@ avocado
 leak
 point
 think
-bookstore
+bookshop
 yodel
 lance
 peace
@@ -1750,7 +1711,6 @@ yawn
 nanny
 sheep dog
 sap
-cape
 orbit
 junk
 Jedi
@@ -1772,8 +1732,8 @@ deliver
 imagine
 chicken coop
 sled
-torch
 rim
+ant farm
 best friend
 boulevard
 cellar

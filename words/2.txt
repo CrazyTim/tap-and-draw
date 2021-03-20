@@ -7,12 +7,17 @@ password
 fur
 outside
 wall
-glass
+vaccine
+frosted glass
 tide
 pajamas
+campervan
+coliseum
 salt
 movie
+musician
 macaroni
+colored pencil
 dough
 mime
 double storey building
@@ -20,23 +25,27 @@ chalk
 stew
 download
 flavour
+ingrown toenail
 shout
 sibling
 logo
 medicine
+blank canvas
 dream
-crust
-zoo
+rust
+paper shredder
+inbox
 punk
 leak
 orbit
 full
-neighbor
+cream
 applause
 husband
 quicksand
 chess
 chairman
+hairball
 bed bug
 baby sitter
 leather
@@ -47,11 +56,9 @@ dance
 iris
 taxi
 mold
-handle
 sheep dog
 virus
 recycle
-pilot
 thinking
 wind
 swarm
@@ -60,7 +67,6 @@ bruise
 glitter
 zip
 glue
-cape
 dizzy
 icicle
 petal
@@ -147,12 +153,14 @@ Windy
 Upside down
 Steak knife
 Bait
-Underground tunnel
+water buffalo
+front
+deep
+mirage
 Magazine
 Grow
 crime
-Archery
-Tritan
+hinge
 Website
 Credit card
 Satellite
@@ -162,7 +170,6 @@ Pumpkin soup
 Asthma
 Chicken pox
 Radio station
-explode
 Balance
 Oxygen
 Weather forecast
@@ -173,13 +180,18 @@ stain
 armour
 sprout
 frozen
+licorish
+velcro
 piston
+stencil
 capture
 mansion
 explosion
 captain
 confused
 portal
+portrait
+party animal
 meme
 radio
 angle
@@ -219,7 +231,7 @@ Hotel
 Paper plate
 Photo
 war
-Rock band
+rock band
 Skip
 foil
 Solar eclipse
@@ -235,7 +247,6 @@ password
 ligament
 wetlands
 hypothermia
-eureka
 publisher
 practice
 debt
@@ -269,13 +280,15 @@ digestion
 dugout
 pen pal
 psychologist
+cupboard
 employee
 nutmeg
 risk
 blacksmith
 grain
-galaxy
+ribbon
 crow's nest
+air vent
 freshwater
 president
 brunette
@@ -296,7 +309,6 @@ society
 exponential
 comparison
 acre
-mortal
 sidekick
 turret
 voice
