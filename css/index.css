@@ -159,8 +159,8 @@ body {
 
   .btn-timer.on {
     background-color: #fd7d87;
-    width: 17vmin;
-    height: 17vmin;
+    width: 22vmin;
+    height: 22vmin;
     border-radius: 17vmin;
   }
 
@@ -173,6 +173,7 @@ body {
   }
 
 /*-----------------------------------*/
+
 .dia-level {
   grid-template-rows: auto 20vmin 20vmin 20vmin auto;
 }

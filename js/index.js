@@ -50,7 +50,7 @@ async function initalise() {
   $('.btn-timer').onmousedown = handleTimerToggle;
 
   timerFinishSound = new Howl({
-    src: ['assets/timer-finish-01.ogg']
+    src: ['audio/timer-finish-01.ogg']
   });
 
 }
@@ -269,7 +269,7 @@ function renderTimer() {
 
   if (isTimerVisible) {
 
-    label.innerHTML = "60";
+    label.innerHTML = '60';
     el.classList.add('on');
 
     timer = setInterval(() => {

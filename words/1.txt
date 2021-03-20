@@ -852,7 +852,6 @@ helium
 windshield
 america
 playground
-timer
 bomb
 cardboard
 lid
